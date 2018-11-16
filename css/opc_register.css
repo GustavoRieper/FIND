@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?');
+body{
+    margin: 0px;
+    background: #000;
+}
+.box-register{
+    width: 100%;
+}
+#back{
+    background-color: #fafafa;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    padding: 10px;
+    position: absolute;
+    z-index: 999;
+    text-decoration: none;
+    color: #000;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.user{
+    width: 50%;
+    background-color: #16b587;
+    min-height: 100%;
+    position: absolute;
+    transition: all 0.7s;
+    opacity: 0.7;
+}
+.pro{
+    width: 50%;
+    margin-left: 50%;
+    background-color: #f04477;
+    min-height: 100%;
+    position: absolute;
+    transition: all 0.7s;
+    opacity: 0.7;
+}
+.row1, .row2{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.row1 img, row2 img{
+    width: 60%;
+    height: 60%;
+} 
+.row2 h1, row2 h1{
+    margin-top: 15%;
+    font-family: 'Raleway', sans-serif;
+    color: #FFF;
+    width: 80%;
+}
+.row2 p, row2 p{
+    font-family: 'Raleway', sans-serif;
+    color: #FFF;
+    width: 80%;
+    opacity: 0.0;    
+    transition: all 0.7s;
+}
+.user:hover #desc, .pro:hover #desc{
+    opacity: 1;
+    transition: all 0.7s;
+}
+.user:hover, .pro:hover{
+    opacity: 1;
+    transition: all 0.7s;
+}
+@media only screen and (max-device-width: 600px){
+    .box-register {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .user,.pro{
+        width: 100%;
+        position: relative;
+        opacity: 1;
+        margin-left: 0%;
+    }
+    .row2 h1, row2 h1{
+        margin-top: 5%;
+    }
+    .row2 p{
+        opacity: 1;
+        font-size: 200%;
+        margin-bottom: 5%;
+    }
+    .row2 h1, row2 h1{
+        font-size: 300%;
+    }
+    
+}

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+body{
+    margin: 0px;
+}
+.box-login{
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 8%;
+}
+#image-logo{
+    width: 50%;
+    height: auto;
+    margin-left: 25%;
+}
+.box-login form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.error-login{
+    margin:20px;
+    text-align: center;
+}
+#error{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90%;
+    color: red;
+    
+}
+#record{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90%;
+    color: darkgreen;
+}
+.box-login form input{
+    width: 50%;
+    height: 30px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #cecece;
+    background-color: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 90%;
+    transition: all 0.5s;
+}
+.box-login form input[type="submit"]{
+    cursor: pointer;
+}
+.box-login form input[type="submit"]:hover{
+    font-size: 100%;
+}
+@media only screen and (max-device-width: 600px) {
+    .box-login{
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 40%;
+    }
+    .box-login form input{
+        width: 80%;
+        height: 80px;
+        margin: 40px 0px 40px 0px;
+        font-size: 200%;
+    }
+    #error,#record{
+        font-size: 200%;
+    }
+}
