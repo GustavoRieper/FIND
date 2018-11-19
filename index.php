@@ -30,6 +30,7 @@ session_start();
                         }                        
                     ?>
                 </span>
+                <br>
                 <span id="record">
                     <?php
                         if(isset($_SESSION['record'])){

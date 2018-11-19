@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+.menu{
+    width: 100%;
+    height: 60px;   
+    display: flex;
+    align-content: center;
+    background-color: #3f7eff;
+}
+.pro{
+    margin-left: 50px;
+}
+.pro h2{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+}
+.logo{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.logo img{
+    width: 20%;
+}
+nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+nav ul{
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    justify-content: center;
+    margin-right: 100px;
+}
+nav ul li{
+    list-style-type: none;    
+    padding-left: 30px;
+}
+nav ul li a{
+    font-family: 'PT Sans', sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 120%;
+    font-weight: 550;
+    transition: all 0.7s;
+}
+nav ul li a:hover{
+    font-size: 130%;
+    transition: all 0.7s;
+    color: #d0cece;
+}
+nav ul li a i{
+    padding-right: 5px;
+}
+.user{
+    width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user img{
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+}
+
+.content-user{
+    width: 200px;
+    background-color: #d4d4d4;
+    height: 200px;
+    position: absolute;
+    margin-top: 130px;
+    margin-left: -70px;
+    display: none;
+    border-radius: 0px 0px 10px 10px;
+}
+.content-user ul{
+    padding: 10px;
+}
+.content-user ul li{
+    list-style: none;
+    font-family: 'PT Sans', sans-serif;
+    word-break: break-all;
+}
+#logout{
+    width: 100%;
+    right: 0px;
+/*    padding-left: 40px;*/
+/*    padding-right: 40px;*/
+    padding-top: 5px;
+    padding-bottom: 5px;  
+    position: absolute;
+    bottom: 0px; 
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 120%;
+    background-color: #3f7eff;
+    text-align: center;
+    transition: 0.7s;
+}
+#logout:hover{
+    color: #FFF;
+    transition: 0.7s;
+}
+@media only screen and (max-device-width: 600px){
+    .menu{
+        height: 110px;
+    }
+    .pro{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    nav{
+        font-size: 200%;
+    }
+    nav ul li{
+        padding-left: 80px;
+    }
+    .user img{
+        width: 80px;
+        height: 80px;
+    }
+    .content-user{
+        margin-top: 155px;
+    }
+    
+}
+

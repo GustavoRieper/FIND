@@ -1,0 +1,49 @@
+body{
+    margin: 0px;
+}
+.options{
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.options .opc{
+    width: 15%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    margin: 50px;
+    padding: 20px;
+    
+}
+.options .opc i{
+    font-size: 1100%;
+    margin-bottom: 10px;
+}
+.options .opc a{
+    text-decoration: none;
+    color: #000;
+    font-family: 'Muli', sans-serif;
+    text-align: center;
+    color: #5c5959;
+    transition: 0.7s;
+}
+.options .opc a:hover{
+    color: #000;
+    transition: 0.7s;
+}
+.options .opc a span{
+    font-size: 140%;
+    position: absolute;
+    margin-left: 0px;
+    padding-top: 10px;
+    color: red;
+}
+#news{
+    position: absolute;
+    font-size: 50%;
+    margin-left: -10px;
+}
