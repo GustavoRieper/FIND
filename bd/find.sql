@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 19-Nov-2018 às 01:08
--- Versão do servidor: 10.1.31-MariaDB
--- PHP Version: 7.2.4
+-- Generation Time: 30-Nov-2018 às 23:59
+-- Versão do servidor: 10.1.36-MariaDB
+-- versão do PHP: 7.2.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `find`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `senha` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `admin`
+--
+
+INSERT INTO `admin` (`id`, `name`, `email`, `senha`) VALUES
+(1, 'Gustavo', 'admin@find.com', 'teste');
 
 -- --------------------------------------------------------
 
@@ -53,7 +73,8 @@ INSERT INTO `pro` (`id`, `level`, `name`, `last_name`, `email`, `senha`, `tel`, 
 (2, 2, 'Airton', 'Rieper', 'airtonrieper@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '2147483647', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC'),
 (6, 2, 'Ivonete', 'Rieper', 'ivoneterieper@gmail.com', 'teste', '(47) 99688-5321', 'Marceneiro', '09388815904', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC'),
 (8, 2, 'Gustavo', 'Rieper', 'gustavorieper@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '09388815904', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC'),
-(9, 2, 'Jean', 'Schultz', 'jean.schultz@ielusc.br', 'teste123', '(47) 99199-9999', 'Eletricista', '02898329932', 89227315, 'Rua Xaxim', 'Iririú', 'Joinville', 'SC');
+(9, 2, 'Jean', 'Schultz', 'jean.schultz@ielusc.br', 'teste123', '(47) 99199-9999', 'Eletricista', '02898329932', 89227315, 'Rua Xaxim', 'Iririú', 'Joinville', 'SC'),
+(10, 2, 'Paula', 'Picolli', 'paulapicolli@gmail.com', 'teste', '(47) 98887-7777', 'Marceneiro', '09388815903', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC');
 
 -- --------------------------------------------------------
 
@@ -104,10 +125,17 @@ INSERT INTO `user` (`id`, `level`, `name`, `last_name`, `email`, `senha`, `tel`)
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pro`
 --
 ALTER TABLE `pro`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `profissoes`
@@ -126,10 +154,16 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `pro`
 --
 ALTER TABLE `pro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `profissoes`
