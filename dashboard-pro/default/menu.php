@@ -29,9 +29,13 @@ include '../admin/connect.php';
            contentUser.style.display = "none";
         }else{
             contentUser.style.display = "block"; 
+        } 
+    }
+    function closeUser(){
+        var contentUser = document.getElementById("contentUser");
+        if(contentUser.style.display == "block"){
+           contentUser.style.display = "none";
         }
-        
-       
     }
     </script>
 
@@ -43,21 +47,23 @@ include '../admin/connect.php';
     <div class="logo">
         <img src="../image/default/ico_branco.png">
     </div>
-    <nav>
-        <ul>
-            <li><a href="index.php"><i class="fas fa-home"></i>Início</a></li>
-            <li><a href="profile.php"><i class="fas fa-user-cog"></i>Perfil</a></li>
-            <li><a href="#"><i class="fas fa-briefcase"></i>Negócios</a></li>
-        </ul>
-    </nav>
-    <div class="user">
-        <img src="image/default/user.png" onclick="contentUser()">
-        <div class="content-user" id="contentUser">
+    <div class="content-nav">
+        <nav>
             <ul>
-                <li><?php echo($nome['name']); ?> <?php echo($nome['last_name']); ?></li>
-                <li><?php echo($email); ?></li>
-                <li><a id="logout" href="../function/logout.php"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
+                <li><a href="index.php"><i class="fas fa-home"></i>Início</a></li>
+                <li><a href="profile.php"><i class="fas fa-user-cog"></i>Perfil</a></li>
+                <li><a href="#"><i class="fas fa-briefcase"></i>Negócios</a></li>
             </ul>
+        </nav>
+        <div class="user">
+            <img src="image/default/user.png" onclick="contentUser()">
+            <div class="content-user" id="contentUser">
+                <ul>
+                    <li><?php echo($nome['name']); ?> <?php echo($nome['last_name']); ?></li>
+                    <li><?php echo($email); ?></li>
+                    <li><a id="logout" href="../function/logout.php"><i class="fas fa-sign-out-alt"></i>Sair</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>

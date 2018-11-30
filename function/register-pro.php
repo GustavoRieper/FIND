@@ -276,8 +276,7 @@
                             <input type="submit" id="register" value="Registrar" onClick="valida()">  
                         </div>
                     </form>
-                </div>
-                          
+                </div>                          
         </div>
     </body>
 
