@@ -35,9 +35,7 @@ session_start();
                     <?php
                         if(isset($_SESSION['record'])){
                                 echo("Cadastrado realizado com sucesso!");
-                            }else{
-
-                        }
+                            }
                     ?>
                 </span>
             </div>

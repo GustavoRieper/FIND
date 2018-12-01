@@ -112,46 +112,51 @@ $nome = mysqli_fetch_assoc($dados);
             
             
         </script>
+        <style>
+            #email{
+                cursor: no-drop;
+            }
+        </style>
     </head>
     
     <body>
         <div class="content" onclick="closeUser()">
-            <h2>Perfil</h2>
+            <h2 id="title">Perfil</h2>
             <div class="box-register">
                 <div class="col1">
-                    <form method="post" action="../admin/record-pro.php" onsubmit="return validarSenha();" name="cadastro">
+                    <form method="post" action="function/alter-profile.php" onsubmit="return validarSenha();" name="cadastro">
                         <div class="option">
                             <div id="box-label">
                                 <label for="name">Nome<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="name" name="name" value=<?php echo($nome['name']); ?> required disabled>
+                            <input type="text" id="name" name="name" value=<?php echo($nome['name']); ?> required>
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="last-name">Último Nome<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="last-name" name="last_name" value=<?php echo($nome['last_name']); ?> required disabled>
+                            <input type="text" id="last-name" name="last_name" value=<?php echo($nome['last_name']); ?> required >
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="email">E-mail<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="email" name="email" value=<?php echo($nome['email']); ?> required disabled>
+                            <input type="text" id="email" name="email" value=<?php echo($nome['email']); ?> required disabled title="Não é permitido alterar o email.">
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="pass">Senha<span id="obg">*</span></label>
                             </div>
-                            <input type="password" id="pass" name="senha" placeholder="***********" required disabled>
+                            <input type="password" id="pass" name="senha" placeholder="***********" required >
                         </div>
                         <div class="option">
                             <div id="box-label">
                                 <label for="pass">Repetir Senha<span id="obg">*</span></label>
                             </div>
-                            <input type="password" id="pass" name="re_senha" placeholder="***********" required disabled>
+                            <input type="password" id="pass" name="re_senha" placeholder="***********" required >
                         </div>
                         <script>
                              function validarSenha(){
@@ -167,14 +172,6 @@ $nome = mysqli_fetch_assoc($dados);
                                     return true;
                              }
                         </script>                        
-
-
-                        <div class="option">
-                            <div id="box-label">
-                                <label for="telefone">Telefone<span id="obg">*</span></label>
-                            </div>
-                            <input type="text" id="telefone" name="tel" value=<?php echo($nome['tel']); ?>  maxlength="15" required disabled>
-                        </div>
                 </div>
                 <div class="col2">
 
@@ -182,43 +179,49 @@ $nome = mysqli_fetch_assoc($dados);
                             <div id="box-label">
                                 <label for="cep">CEP<span id="obg">*</span></label>
                             </div>
-                            <input name="cep" type="text" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" value=<?php echo($nome['cep']); ?> required disabled/> 
+                            <input name="cep" type="text" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" value=<?php echo($nome['cep']); ?> required /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="rua">Rua<span id="obg">*</span></label>
                             </div>
-                            <input name="rua" type="text" id="rua" size="60" required value=<?php echo($nome['rua']); ?> disabled/> 
+                            <input name="rua" type="text" id="rua" size="60" required value=<?php echo($nome['rua']); ?> /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="bairro">Bairro<span id="obg">*</span></label>
                             </div>
-                            <input name="bairro" type="text" id="bairro" value=<?php echo($nome['bairro']); ?> size="40" required disabled/>
+                            <input name="bairro" type="text" id="bairro" value=<?php echo($nome['bairro']); ?> size="40" required />
                         </div> 
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="cidade">Cidade<span id="obg">*</span></label>
                             </div>
-                            <input name="cidade" type="text" id="cidade" size="40" value=<?php echo($nome['cidade']); ?> required disabled/>
+                            <input name="cidade" type="text" id="cidade" size="40" value=<?php echo($nome['cidade']); ?> required />
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="uf">Estado<span id="obg">*</span></label>
                             </div>
-                            <input name="uf" type="text" id="uf" size="2" value=<?php echo($nome['uf']); ?> required disabled/>
+                            <input name="uf" type="text" id="uf" size="2" value=<?php echo($nome['uf']); ?> required />
                         </div>
                         <input style="display:none;" name="ibge" type="text" id="ibge" size="8"  /> <!-- Fonte IBGE Obrigatório -->
                         <br>
                         <br>
-                        <div class="bottons">
-                            <a href="../index.php" id="register" onclick="">Editar</a>
-                            <input type="submit" id="register" value="Registrar">  
-                        </div>
+                        <div class="bottons">                            
+                            <input type="submit" id="register" value="Salvar">  
+                            <span id="record">
+                                <?php
+                                    if(isset($_SESSION['record'])){
+                                            echo("Dados atualizados!");
+                                        }
+                                ?>
+                            </span>
+                        </div>                    
                     </form>
                 </div>                          
             </div>
