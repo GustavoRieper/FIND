@@ -1,6 +1,12 @@
 <?php
 $page = "Perfil";
 include 'default/menu.php';
+include '../admin/connect.php';
+
+$email = $_SESSION['email']; 
+
+$dados= mysqli_query($connect, "SELECT name, last_name, email, tel, cep, rua, bairro, cidade, uf, profissao FROM pro WHERE '$email'= email") or die (mysql_error());
+$nome = mysqli_fetch_assoc($dados);
 
 ?>
 <!DOCTYPE html>
@@ -103,6 +109,8 @@ include 'default/menu.php';
                     limpa_formulário_cep();
                 }
             };
+            
+            
         </script>
     </head>
     
@@ -116,34 +124,34 @@ include 'default/menu.php';
                             <div id="box-label">
                                 <label for="name">Nome<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="name" name="name" placeholder="Ex: Gustavo" required>
+                            <input type="text" id="name" name="name" value=<?php echo($nome['name']); ?> required disabled>
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="last-name">Último Nome<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="last-name" name="last_name" placeholder="Ex: Rieper" required>
+                            <input type="text" id="last-name" name="last_name" value=<?php echo($nome['last_name']); ?> required disabled>
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="email">E-mail<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="email" name="email" placeholder="Ex: seunome@dominio.com" required>
+                            <input type="text" id="email" name="email" value=<?php echo($nome['email']); ?> required disabled>
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="pass">Senha<span id="obg">*</span></label>
                             </div>
-                            <input type="password" id="pass" name="senha" placeholder="***********" required>
+                            <input type="password" id="pass" name="senha" placeholder="***********" required disabled>
                         </div>
                         <div class="option">
                             <div id="box-label">
                                 <label for="pass">Repetir Senha<span id="obg">*</span></label>
                             </div>
-                            <input type="password" id="pass" name="re_senha" placeholder="***********" required>
+                            <input type="password" id="pass" name="re_senha" placeholder="***********" required disabled>
                         </div>
                         <script>
                              function validarSenha(){
@@ -165,7 +173,7 @@ include 'default/menu.php';
                             <div id="box-label">
                                 <label for="telefone">Telefone<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="telefone" name="tel" placeholder="Ex: (47) 5555-5555"  maxlength="15" required>
+                            <input type="text" id="telefone" name="tel" value=<?php echo($nome['tel']); ?>  maxlength="15" required disabled>
                         </div>
                 </div>
                 <div class="col2">
@@ -174,40 +182,41 @@ include 'default/menu.php';
                             <div id="box-label">
                                 <label for="cep">CEP<span id="obg">*</span></label>
                             </div>
-                            <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" required/> 
+                            <input name="cep" type="text" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" value=<?php echo($nome['cep']); ?> required disabled/> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="rua">Rua<span id="obg">*</span></label>
                             </div>
-                            <input name="rua" type="text" id="rua" size="60" required/> 
+                            <input name="rua" type="text" id="rua" size="60" required value=<?php echo($nome['rua']); ?> disabled/> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="bairro">Bairro<span id="obg">*</span></label>
                             </div>
-                            <input name="bairro" type="text" id="bairro" size="40" required/>
-                        </div>
+                            <input name="bairro" type="text" id="bairro" value=<?php echo($nome['bairro']); ?> size="40" required disabled/>
+                        </div> 
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="cidade">Cidade<span id="obg">*</span></label>
                             </div>
-                            <input name="cidade" type="text" id="cidade" size="40" required/>
+                            <input name="cidade" type="text" id="cidade" size="40" value=<?php echo($nome['cidade']); ?> required disabled/>
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="uf">Estado<span id="obg">*</span></label>
                             </div>
-                            <input name="uf" type="text" id="uf" size="2" required/>
+                            <input name="uf" type="text" id="uf" size="2" value=<?php echo($nome['uf']); ?> required disabled/>
                         </div>
                         <input style="display:none;" name="ibge" type="text" id="ibge" size="8"  /> <!-- Fonte IBGE Obrigatório -->
-
+                        <br>
+                        <br>
                         <div class="bottons">
-                            <a href="../index.php" id="register">Voltar ao login</a>
+                            <a href="../index.php" id="register" onclick="">Editar</a>
                             <input type="submit" id="register" value="Registrar">  
                         </div>
                     </form>

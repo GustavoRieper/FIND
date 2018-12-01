@@ -43,7 +43,7 @@ include '../admin/connect.php';
                                 $numero_linhas = mysqli_num_rows($resultado);
                                 while ($linha = mysqli_fetch_array($resultado)){
                                     $nome = $linha["name"];
-                                    echo("<option>$nome</option>");
+                                    echo("<p>$nome</p>");
                                 } 
                             ?>                          
                         </td>
@@ -55,7 +55,7 @@ include '../admin/connect.php';
                                 $numero_linhas = mysqli_num_rows($resultado);
                                 while ($linha = mysqli_fetch_array($resultado)){
                                     $email = $linha["email"];
-                                    echo("<option>$email</option>");
+                                    echo("<p>$email</p>");
                                 }   
                             ?>
                           </td>
@@ -67,7 +67,7 @@ include '../admin/connect.php';
                                 $numero_linhas = mysqli_num_rows($resultado);
                                 while ($linha = mysqli_fetch_array($resultado)){
                                     $id = $linha["id"];
-                                    echo("<option>$id</option>");
+                                    echo("<p>$id</p>");
                                 }   
                             ?>
                           </td>
