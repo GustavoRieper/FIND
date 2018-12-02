@@ -20,8 +20,9 @@ body{
     
 }
 .options .opc i{
-    font-size: 1100%;
+    font-size: 1000%;
     margin-bottom: 10px;
+    width: 100%;
 }
 .options .opc a{
     text-decoration: none;
