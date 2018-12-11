@@ -11,6 +11,10 @@
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['pass'] = $_POST['password'];
         header("location: ../dashboard-admin");
+    }else{
+        session_start();
+        $_SESSION['error'] = "1";
+        header("location: ../admin.php");
     }       
 
 ?>

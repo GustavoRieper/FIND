@@ -22,7 +22,7 @@ session_start();
                     Acesso do administrador<br>
                     <?php
                         if(isset($_SESSION['error'])){
-                            echo("Usuário ou senha incorreto.");
+                            echo("<u>Usuário ou senha incorreto.</u>");
                         }else{
 
                         }                        

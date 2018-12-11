@@ -6,6 +6,7 @@
     display: flex;
     align-content: center;
     background-color: #3f7eff;
+    z-index: 999;
 }
 .pro{
     width: 45%;
@@ -69,6 +70,7 @@ nav ul li a i{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 999;
 }
 .user img{
     width: 45px;
@@ -85,6 +87,7 @@ nav ul li a i{
     display: none;
     border-radius: 0px 0px 10px 10px;
     box-shadow: 2px 3px 30px #CCC;
+    background-color: #FFF;
 }
 .content-user ul{
     padding: 10px;
@@ -94,6 +97,7 @@ nav ul li a i{
     font-family: 'PT Sans', sans-serif;
     word-break: break-all;
     color: #5c5959;
+    background-color: #FFF;
 }
 #logout{
     width: 100%;
