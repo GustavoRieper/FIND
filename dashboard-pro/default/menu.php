@@ -42,7 +42,7 @@ include '../admin/connect.php';
 </head>
 <div class="menu">
     <div class="pro">
-        <h2><?php echo($nome['profissao']); ?></h2>
+        <h2 id="profissao"><?php echo($nome['profissao']); ?></h2>
     </div>
     <div class="logo">
         <img src="../image/default/ico_branco.png">
