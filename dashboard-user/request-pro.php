@@ -23,7 +23,7 @@ include "../admin/connect.php";
                         <option value="0">Selecione</option>
                         <?php
                             mysqli_set_charset($connect,'utf8'); 
-                            $sql = "SELECT nm_profissao FROM profissoes"; 
+                            $sql = "SELECT nm_profissao FROM profissoes ORDER BY nm_profissao ASC"; 
                             $resultado = mysqli_query($connect,$sql);
                             $numero_linhas = mysqli_num_rows($resultado);
                             while ($linha = mysqli_fetch_array($resultado)){

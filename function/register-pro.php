@@ -33,48 +33,7 @@
                 }
             }
             
-            /* Validação de CPF */
-            function valida(){
-				if(valida_cpf(document.getElementById('cpf').value)){
-                }else{
-					alert('CPF Inválido');
-                    document.cadastro.cpf.style.borderColor = "red";
-                }
-			}
-			
-			function valida_cpf(cpf){
-				  var numeros, digitos, soma, i, resultado, digitos_iguais;
-				  digitos_iguais = 1;
-				  if (cpf.length < 11)
-						return false;
-				  for (i = 0; i < cpf.length - 1; i++)
-						if (cpf.charAt(i) != cpf.charAt(i + 1))
-							  {
-							  digitos_iguais = 0;
-							  break;
-							  }
-				  if (!digitos_iguais)
-						{
-						numeros = cpf.substring(0,9);
-						digitos = cpf.substring(9);
-						soma = 0;
-						for (i = 10; i > 1; i--)
-							  soma += numeros.charAt(10 - i) * i;
-						resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-						if (resultado != digitos.charAt(0))
-							  return false;
-						numeros = cpf.substring(0,10);
-						soma = 0;
-						for (i = 11; i > 1; i--)
-							  soma += numeros.charAt(11 - i) * i;
-						resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
-						if (resultado != digitos.charAt(1))
-							  return false;
-						return true;
-						}
-				  else
-						return false;
-			}
+            
             
             /* Validação de CEP */
             function limpa_formulário_cep() {
@@ -217,7 +176,7 @@
                             <select id="select" name="profissao" required>
                                 <?php
                                     mysqli_set_charset($connect,'utf8'); 
-                                    $sql = "SELECT nm_profissao FROM profissoes"; 
+                                    $sql = "SELECT nm_profissao FROM profissoes ORDER BY nm_profissao ASC"; 
                                     $resultado = mysqli_query($connect,$sql);
                                     $numero_linhas = mysqli_num_rows($resultado);
                                     while ($linha = mysqli_fetch_array($resultado)){
@@ -233,6 +192,59 @@
                                 <label for="cpf">CPF<span id="obg">*</span></label>
                             </div>
                             <input name="cpf" type="num" id="cpf" maxlength="11" placeholder="Ex: 000.000.000.00 " required/> 
+                            <script>
+                            /* Validação de CPF */
+                                
+
+                                function valida_cpf(cpf){
+                                      var numeros, digitos, soma, i, resultado, digitos_iguais;
+                                      digitos_iguais = 1;
+                                      if (cpf.length < 11)
+                                            return false;
+                                            
+                                      for (i = 0; i < cpf.length - 1; i++)
+                                            if (cpf.charAt(i) != cpf.charAt(i + 1))
+                                                  {
+                                                  digitos_iguais = 0;
+                                                  break;
+                                                  }
+                                      if (!digitos_iguais)
+                                            {
+                                            numeros = cpf.substring(0,9);
+                                            digitos = cpf.substring(9);
+                                            soma = 0;
+                                            for (i = 10; i > 1; i--)
+                                                  soma += numeros.charAt(10 - i) * i;
+                                            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                                            if (resultado != digitos.charAt(0))
+                                                  return false;
+                                            numeros = cpf.substring(0,10);
+                                            soma = 0;
+                                            for (i = 11; i > 1; i--)
+                                                  soma += numeros.charAt(11 - i) * i;
+                                            resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
+                                            if (resultado != digitos.charAt(1))
+                                                  return false;
+                                            return true;
+                                            }
+                                      else
+                                            return false;
+                                            
+                                }
+                                function valida(){
+                                    if(valida_cpf(document.getElementById('cpf').value)){
+                                    }else{
+                                        alert('CPF Inválido');
+                                        document.cadastro.cpf.style.borderColor = "red";
+                                        cpf.value = "";
+                                        cpf.placeholder = "CPF inválido";
+                                    }
+                                }
+                            
+                            
+                            
+                            
+                            </script>
                         </div>
                     
                         <div class="option">
@@ -273,7 +285,7 @@
                     
                         <div class="bottons">
                             <a href="../index.php" id="register">Voltar ao login</a>
-                            <input type="submit" id="register" value="Registrar" onClick="valida()">  
+                            <input type="submit" id="register" value="Registrar" onClick="valida();valida_cpf(cpf)">  
                         </div>
                     </form>
                 </div>                          
