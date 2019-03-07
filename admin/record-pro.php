@@ -20,8 +20,27 @@
 
      session_start();
     $_SESSION['record'] = "1";
-    header("location: ../index.php");
+//    header("location: ../index.php");
 
 
-
+$rua = str_replace(' ',  '+', 'Avenida Atlantica');
+$numero = '1702';
+$cidade = str_replace(' ', '+', 'Rio de Janeiro');
+$pais = 'BR';
+ 
+$url = 'http://maps.google.com.br/maps/api/geocode/json?address=';
+$url .= "$numero+$rua,+$cidade,+$pais&sensor=false";
+ 
+$c = curl_init();
+curl_setopt($c, CURLOPT_URL, $url);
+curl_setopt($c, CURLOPT_RETURNTRANSFER, 1);
+$conteudo = curl_exec($c);
+curl_close($c);
+ 
+$json = json_decode($conteudo, false);
+ 
+print_r($conteudo);
+ 
+echo 'latitude: ', $json->results[0]->geometry->location->lat, "\n";
+echo 'longitude: ', $json->results[0]->geometry->location->lng;
 ?>

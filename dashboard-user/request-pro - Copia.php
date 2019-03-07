@@ -20,6 +20,26 @@ $page = "Solicitar Profissional";
         padding: 0;
       }
     </style>
+        
+        <script>
+        var map;
+ 
+        function initialize() {
+            var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
+
+            var options = {
+                zoom: 5,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            map = new google.maps.Map(document.getElementById("mapa"), options);
+        }
+
+        initialize();
+        
+        
+        </script>
     </head>
     
     <body>
@@ -31,46 +51,25 @@ $page = "Solicitar Profissional";
         
         <div id="map"></div>
         
+       <script src="http://maps.google.com/maps/api/js"></script>
         <script>
-              var map;
-              function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                  zoom: 2,
-                  center: new google.maps.LatLng(2.8,-187.3),
-                  mapTypeId: 'terrain'
-                });
-
-                // Create a <script> tag and set the USGS URL as the source.
-                var script = document.createElement('script');
-                // This example uses a local copy of the GeoJSON stored at
-                // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-                script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-                document.getElementsByTagName('head')[0].appendChild(script);
-              }
-
-              // Loop through the results array and place a marker for each
-              // set of coordinates.
-              window.eqfeed_callback = function(results) {
-                for (var i = 0; i < results.features.length; i++) {
-                  var coords = results.features[i].geometry.coordinates;
-                  var latLng = new google.maps.LatLng(coords[1],coords[0]);
-                  var marker = new google.maps.Marker({
-                    position: latLng,
-                    map: map
-                  });
-                }
-              }
-
+        
+        var lat = '';
+var lng = '';
+var address = {cep} or {endereço};
+geocoder.geocode( { 'address': address}, function(results, status) {
+  if (status == google.maps.GeocoderStatus.OK) {
+     lat = results[0].geometry.location.lat();
+     lng = results[0].geometry.location.lng();
+  } else {
+     alert("Não foi possivel obter localização: " + status);
+  }
+});
+alert('Latitude: ' + lat + ' Logitude: ' + lng);
         </script>
+<!--        <script src="js/mapa.js"></script>-->
     
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwB1RwjshZkpg1TRWWEdCqmzVMHXoS5jY&callback=initMap">
-    </script>
-<!--
-        <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6Am7wIw0Q1zw6wl55YCFGN4EEDWDwxHA&callback=initMap">
-    </script>
--->
+
             
             
             

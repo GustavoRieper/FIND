@@ -8,6 +8,7 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/register.css">
         <link rel="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"/>
+        <script src="http://maps.google.com/maps/api/js"></script>
         <script type="text/javascript">            
             /* Máscaras ER */
             function mascara(o,f){
@@ -68,7 +69,6 @@
 
                 //Verifica se campo cep possui valor informado.
                 if (cep != "") {
-
                     //Expressão regular para validar o CEP.
                     var validacep = /^[0-9]{8}$/;
 
@@ -102,7 +102,11 @@
                     //cep sem valor, limpa formulário.
                     limpa_formulário_cep();
                 }
+                
+                
             };
+            
+            
         </script>
     </head>
     
