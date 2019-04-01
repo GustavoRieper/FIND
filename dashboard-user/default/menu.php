@@ -9,6 +9,7 @@ include '../admin/connect.php';
     if($email == NULL){
         
         echo "<script>alert('Email não encontrado')</script>";
+            header("location: ../index.php");        
     }else{
         
     }
@@ -53,7 +54,7 @@ include '../admin/connect.php';
             <ul>
                 <li><a href="index.php"><i class="fas fa-home"></i>Início</a></li>
                 <li><a href="profile.php"><i class="fas fa-user-cog"></i>Perfil</a></li>
-                <li><a href="#"><i class="fas fa-briefcase"></i>Profissionais Contratados</a></li>
+                <li><a href="historic-pro.php"><i class="fas fa-briefcase"></i>Profissionais Contratados</a></li>
             </ul>
         </nav>
         <div class="user">

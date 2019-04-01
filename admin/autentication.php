@@ -12,7 +12,7 @@
         $_SESSION['pass'] = $_POST['password'];
         header("location: ../dashboard-user");
     }else{
-        $autentication = mysqli_query($connect, "SELECT * FROM pro WHERE email = '$email' AND senha = '$pass'") or die (mysqli_error);
+        $autentication = mysqli_query($connect, "SELECT * FROM professional WHERE email = '$email' AND senha = '$pass'") or die (mysqli_error);
         $row = mysqli_num_rows($autentication);
         if($row > 0){
             session_start();

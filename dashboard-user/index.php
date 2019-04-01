@@ -17,6 +17,9 @@ $page = "Início";
                 </div>
                 <div class="opc">
                     <a href="list-user.php"><i class="fas fa-comments"></i>Avaliar profissional</a>
+                </div>
+                <div class="opc">
+                    <a href="historic-pro.php"><i class="fas fa-book-reader"></i>Profissionais contratados</a>
                 </div>                
             </div>
         </div>

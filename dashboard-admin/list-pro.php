@@ -18,7 +18,7 @@ include '../admin/connect.php';
                 <span>Total de profissionais cadastrados:
                 <b>
                     <?php
-                        $result = mysqli_query($connect, "SELECT count(*) as total from pro");
+                        $result = mysqli_query($connect, "SELECT count(*) as total from professional");
                         $data = mysqli_fetch_assoc($result);
                         echo $data['total'];
                         ?>
@@ -38,7 +38,7 @@ include '../admin/connect.php';
                         <td>
                             <?php
                                 mysqli_set_charset($connect,'utf8'); 
-                                $sql = "SELECT name FROM pro";                         
+                                $sql = "SELECT name FROM professional";                         
                                 $resultado = mysqli_query($connect,$sql);
                                 $numero_linhas = mysqli_num_rows($resultado);
                                 while ($linha = mysqli_fetch_array($resultado)){
@@ -50,7 +50,7 @@ include '../admin/connect.php';
                           <td>
                             <?php
                             mysqli_set_charset($connect,'utf8'); 
-                                $sql = "SELECT email FROM pro";                         
+                                $sql = "SELECT email FROM professional";                         
                                 $resultado = mysqli_query($connect,$sql);
                                 $numero_linhas = mysqli_num_rows($resultado);
                                 while ($linha = mysqli_fetch_array($resultado)){
@@ -62,7 +62,7 @@ include '../admin/connect.php';
                           <td>
                             <?php
                             mysqli_set_charset($connect,'utf8'); 
-                                $sql = "SELECT id FROM pro";                         
+                                $sql = "SELECT id FROM professional";                         
                                 $resultado = mysqli_query($connect,$sql);
                                 $numero_linhas = mysqli_num_rows($resultado);
                                 while ($linha = mysqli_fetch_array($resultado)){
