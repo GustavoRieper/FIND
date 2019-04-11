@@ -3,8 +3,8 @@
     $email = $_SESSION['email']; 
     include '../../admin/connect.php';
 
-    $name       = utf8_decode($_POST['name']);
-    $last_name  = utf8_decode($_POST['last_name']);
+    $name       = $_POST['name'];
+    $last_name  = $_POST['last_name'];
     $senha      = $_POST['senha'];
     $tel        = $_POST['tel'];
     

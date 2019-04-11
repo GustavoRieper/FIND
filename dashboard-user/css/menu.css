@@ -71,6 +71,7 @@ nav ul li a i{
     justify-content: center;
     align-items: center;
     z-index: 999;
+    cursor: pointer;
 }
 .user img{
     width: 45px;
@@ -98,6 +99,14 @@ nav ul li a i{
     word-break: break-all;
     color: #5c5959;
     background-color: #FFF;
+}
+#name h1{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 120%;
+    height: 30px;
+    color: #FFF;
+    padding-top: 2%;
+    margin-right: 10px;
 }
 #logout{
     width: 100%;

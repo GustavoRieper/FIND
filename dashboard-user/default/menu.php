@@ -44,7 +44,7 @@ include '../admin/connect.php';
 </head>
 <div class="menu">
     <div class="pro">
-        <h2><?php echo($nome['name']); ?></h2>
+        
     </div>
     <div class="logo">
         <img src="../image/default/ico_branco.png">
@@ -54,11 +54,14 @@ include '../admin/connect.php';
             <ul>
                 <li><a href="index.php"><i class="fas fa-home"></i>Início</a></li>
                 <li><a href="profile.php"><i class="fas fa-user-cog"></i>Perfil</a></li>
-                <li><a href="historic-pro.php"><i class="fas fa-briefcase"></i>Profissionais Contratados</a></li>
+                
             </ul>
         </nav>
-        <div class="user">
-            <img src="image/default/user.png" onclick="contentUser()">
+        <div class="user"  onclick="contentUser()">
+            <div id="name">
+                <h1><?php echo($nome['name']); ?></h1>
+            </div>
+            <img src="image/default/user.png">
             <div class="content-user" id="contentUser">
                 <ul>
                     <li><?php echo($nome['name']); ?> <?php echo($nome['last_name']); ?></li>

@@ -55,8 +55,11 @@ include '../admin/connect.php';
                 <li><a href="#"><i class="fas fa-briefcase"></i>Negócios</a></li>
             </ul>
         </nav>
-        <div class="user">
-            <img src="image/default/user.png" onclick="contentUser()">
+        <div class="user" onclick="contentUser()">
+        <div id="name">
+            <h1><?php echo($nome['name']); ?></h1>
+        </div>
+            <img src="image/default/user.png" >
             <div class="content-user" id="contentUser">
                 <ul>
                     <li><?php echo($nome['name']); ?> <?php echo($nome['last_name']); ?></li>

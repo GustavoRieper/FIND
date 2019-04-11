@@ -72,6 +72,7 @@ nav ul li a i{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 .user img{
     width: 45px;
@@ -97,6 +98,14 @@ nav ul li a i{
     font-family: 'PT Sans', sans-serif;
     word-break: break-all;
     color: #5c5959;
+}
+#name h1{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 120%;
+    height: 30px;
+    color: #FFF;
+    padding-top: 2%;
+    margin-right: 10px;
 }
 #logout{
     width: 100%;

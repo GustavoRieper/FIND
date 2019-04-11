@@ -17,18 +17,18 @@ include "../admin/connect.php";
     
     <div class="content" onclick="closeUser()">
         <div class="filter">
-            <form action="#" method="post">
+            <form name="profissaoForm" id="profissaoForm">
                 <labe>Selecione o tipo de profissional:</labe>
                 <div class="custom-select" style="width:200px;">
                     <select id="select" name="profissao" required>
                         <option value="0">Selecione</option>
                         <?php
                             mysqli_set_charset($connect,'utf8'); 
-                            $sql = "SELECT nm_profissao FROM profissoes ORDER BY nm_profissao ASC"; 
+                            $sql = "SELECT DISTINCT profissao FROM professional ORDER BY profissao ASC";
                             $resultado = mysqli_query($connect,$sql);
                             $numero_linhas = mysqli_num_rows($resultado);
                             while ($linha = mysqli_fetch_array($resultado)){
-                                $profissao = $linha["nm_profissao"];
+                                $profissao = $linha["profissao"];
                                 echo("<option>$profissao</option>");
                             }
                         ?>
@@ -148,7 +148,12 @@ include "../admin/connect.php";
 		<script src="js/mapa.js"></script>
             
             
-   </div>      
+   </div>   
+    <div class="professional">
+      <?php
+        echo($_SESSION['name-pro']);
+      ?>
+    </div>  
             
 
     </body>
