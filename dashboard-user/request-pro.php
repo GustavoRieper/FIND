@@ -14,14 +14,22 @@ include "../admin/connect.php";
     <body>
         <?php include 'default/menu.php';?>
 
-    
+   
     <div class="content" onclick="closeUser()">
         <div class="filter">
-            <form name="profissaoForm" id="profissaoForm">
+            <form action="function/filter-pro.php" method="post">
                 <labe>Selecione o tipo de profissional:</labe>
                 <div class="custom-select" style="width:200px;">
                     <select id="select" name="profissao" required>
-                        <option value="0">Selecione</option>
+                        <?php
+                          if(isset($_SESSION['pro'])){
+                            $filter = $_SESSION['pro'];
+                            echo("<option value='$filter'>$filter</option>");
+                          }else{
+                            echo("<option value='0'>Selecione</option>");
+                          }
+                        ?>
+                        
                         <?php
                             mysqli_set_charset($connect,'utf8'); 
                             $sql = "SELECT DISTINCT profissao FROM professional ORDER BY profissao ASC";
@@ -29,11 +37,10 @@ include "../admin/connect.php";
                             $numero_linhas = mysqli_num_rows($resultado);
                             while ($linha = mysqli_fetch_array($resultado)){
                                 $profissao = $linha["profissao"];
-                                echo("<option>$profissao</option>");
+                                echo("<option value='$profissao'>$profissao</option>");
                             }
                         ?>
                     </select>
-                    
                 </div>
                 <script>
                     var x, i, j, selElmnt, a, b, c;
@@ -149,12 +156,5 @@ include "../admin/connect.php";
             
             
    </div>   
-    <div class="professional">
-      <?php
-        echo($_SESSION['name-pro']);
-      ?>
-    </div>  
-            
-
     </body>
 </html>

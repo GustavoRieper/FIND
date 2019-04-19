@@ -1,18 +1,12 @@
 <?php
 include "../../admin//connect.php";
+$filter = $_POST["profissao"];
+session_start();
+$_SESSION['pro'] = $filter;
+echo("<script>localStorage.setItem('pro','$filter');</script>");
+//echo("<script>alert(localStorage.getItem('pro'));</script>");
+echo($filter);
 
-    /* Profissionais em Lista */
-$filter       = $_POST['profissao'];
 
-mysqli_set_charset($connect,'utf8'); 
-$sql = "SELECT * FROM professional WHERE profissao = '$filter' ORDER BY name ASC";
-$resultado = mysqli_query($connect,$sql);
-$numero_linhas = mysqli_num_rows($resultado);
-while ($linha = mysqli_fetch_array($resultado)){
-    session_start();
-    $_SESSION['name-pro'] = $linha["name"];
-    $_SESSION['lastName-pro'] = $linha["last_name"];
-    $_SESSION['profissao-pro'] = $linha["profissao"];
-    //echo("$name, $last_name, $profissao <br>");
-    
-}header("location: ../request-pro.php");
+echo("<script>window.setTimeout(window.location.href = '../request-pro.php#mapa',1000);</script>");
+//header("location: ../request-pro.php");

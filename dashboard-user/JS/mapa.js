@@ -104,53 +104,106 @@ function carregarPontos(profissaoParametro) {
 	var longitude = [];
 	var vir = ", ";
 	var latlngbounds = new google.maps.LatLngBounds();
-	$.ajax({
-	url : "function/request-pontos.php" + profissaoParametro,
-		type : 'post',
-		data : {
-			//nome : "Maria Fernanda",
-			content:"all"
-		},
-		success:function(obj){
-			dados = JSON.parse(obj);
-			$(dados).each(function(){
-				//alert($(this)[0].lat);
-				var id = latitude.push($(this)[0].id);
-				//longitude.push($(this)[0].long);
-
-				  
-				var marker = new google.maps.Marker({
-					//position: new google.maps.LatLng(latitude.push($(this)[0].lat), longitude.push($(this)[0].long),
-					position: new google.maps.LatLng($(this)[0].lat, $(this)[0].long),
-					//title: "Meu ponto personalizado! :-D",
-					icon: 'img/marcador.png'
-				});
-				var myOptions = {
-					content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p>",
-					pixelOffset: new google.maps.Size(-150, 0)
-				};
-	
-				infoBox[id] = new InfoBox(myOptions);
-				infoBox[id].marker = marker;
+	if(localStorage.getItem('pro')){
+		$.ajax({
+			url : "function/request-pontos-filter.php" + profissaoParametro,
+				type : 'post',
+				data : {
+					//nome : "Maria Fernanda",
+					content:"all"
+				},
+				success:function(obj){
+					dados = JSON.parse(obj);
+					$(dados).each(function(){
+						//alert($(this)[0].lat);
+						var id = latitude.push($(this)[0].id);
+						//longitude.push($(this)[0].long);
+		
+						  
+						var marker = new google.maps.Marker({
+							//position: new google.maps.LatLng(latitude.push($(this)[0].lat), longitude.push($(this)[0].long),
+							position: new google.maps.LatLng($(this)[0].lat, $(this)[0].long),
+							//title: "Meu ponto personalizado! :-D",
+							icon: 'img/marcador.png'
+						});
+						var myOptions = {
+							content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p>",
+							pixelOffset: new google.maps.Size(-150, 0)
+						};
+			
+						infoBox[id] = new InfoBox(myOptions);
+						infoBox[id].marker = marker;
+						
+						infoBox[id].listener = google.maps.event.addListener(marker, 'click', function (e) {
+							abrirInfoBox([id], marker);
+						});
+						//alert($(this)[0].lat + vir + $(this)[0].long);
+		
+						markers.push(marker);
+					
+						latlngbounds.extend(marker.position);
+		
+						var markerCluster = new MarkerClusterer(map, markers);
 				
-				infoBox[id].listener = google.maps.event.addListener(marker, 'click', function (e) {
-					abrirInfoBox([id], marker);
-				});
-				//alert($(this)[0].lat + vir + $(this)[0].long);
-
-				markers.push(marker);
-			
-				latlngbounds.extend(marker.position);
-
-				var markerCluster = new MarkerClusterer(map, markers);
-		
-				map.fitBounds(latlngbounds);
+						map.fitBounds(latlngbounds);
+					})
+					
+					
+				}
+				
 			})
-			
-			
-		}
+	   
+	  }else{
+		$.ajax({
+			url : "function/request-pontos.php" + profissaoParametro,
+				type : 'post',
+				data : {
+					//nome : "Maria Fernanda",
+					content:"all"
+				},
+				success:function(obj){
+					dados = JSON.parse(obj);
+					$(dados).each(function(){
+						//alert($(this)[0].lat);
+						var id = latitude.push($(this)[0].id);
+						//longitude.push($(this)[0].long);
 		
-	})
+						  
+						var marker = new google.maps.Marker({
+							//position: new google.maps.LatLng(latitude.push($(this)[0].lat), longitude.push($(this)[0].long),
+							position: new google.maps.LatLng($(this)[0].lat, $(this)[0].long),
+							//title: "Meu ponto personalizado! :-D",
+							icon: 'img/marcador.png'
+						});
+						var myOptions = {
+							content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p>",
+							pixelOffset: new google.maps.Size(-150, 0)
+						};
+			
+						infoBox[id] = new InfoBox(myOptions);
+						infoBox[id].marker = marker;
+						
+						infoBox[id].listener = google.maps.event.addListener(marker, 'click', function (e) {
+							abrirInfoBox([id], marker);
+						});
+						//alert($(this)[0].lat + vir + $(this)[0].long);
+		
+						markers.push(marker);
+					
+						latlngbounds.extend(marker.position);
+		
+						var markerCluster = new MarkerClusterer(map, markers);
+				
+						map.fitBounds(latlngbounds);
+					})
+					
+					
+				}
+				
+			})
+		
+	  }
+	
 
 	console.log(latitude);
 	console.log(longitude);
