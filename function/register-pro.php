@@ -288,9 +288,9 @@
                         </div>
                         <input style="display:none;" name="ibge" type="text" id="ibge" size="8"  /> <!-- Fonte IBGE Obrigatório -->
 
-                        <div class="bottons">
+                        <div class="bottons" style="margin-top:200px;">
                             <a href="../index.php" id="register">Voltar ao login</a>
-                            <input type="submit" id="register" value="Registrar" onClick="valida();valida_cpf(cpf)">  
+                            <input type="submit" id="register" value="Próximo" onClick="valida();valida_cpf(cpf)">  
                         </div>
                     </form>
                 </div>                          
