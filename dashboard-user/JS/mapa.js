@@ -124,7 +124,7 @@ function carregarPontos(profissaoParametro) {
 							//position: new google.maps.LatLng(latitude.push($(this)[0].lat), longitude.push($(this)[0].long),
 							position: new google.maps.LatLng($(this)[0].lat, $(this)[0].long),
 							//title: "Meu ponto personalizado! :-D",
-							icon: 'img/marcador.png'
+							icon: 'img/' + $(this)[0].profissao + '.png'
 						});
 						var myOptions = {
 							content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p>",

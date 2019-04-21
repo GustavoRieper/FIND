@@ -5,7 +5,7 @@ include '../admin/connect.php';
 
 $email = $_SESSION['email']; 
 
-$dados= mysqli_query($connect, "SELECT name, last_name, email, tel, cep, rua, bairro, cidade, uf, profissao FROM professional WHERE '$email'= email") or die (mysql_error());
+$dados= mysqli_query($connect, "SELECT name, last_name, email, tel, profissao, endereco, num_endereco FROM professional WHERE '$email'= email") or die (mysql_error());
 $nome = mysqli_fetch_assoc($dados);
 
 ?>
@@ -174,45 +174,37 @@ $nome = mysqli_fetch_assoc($dados);
                         </script>                        
                 </div>
                 <div class="col2">
-
-                        <div class="option">
+                         <div class="option">
                             <div id="box-label">
-                                <label for="cep">CEP<span id="obg">*</span></label>
+                                <label for="tel">Telefone<span id="obg">*</span></label>
                             </div>
-                            <input name="cep" type="text" id="cep" size="10" maxlength="9" onblur="pesquisacep(this.value);" value=<?php echo($nome['cep']); ?> required /> 
+                            <input name="tel" type="text" id="tel" value=<?php echo($nome['tel']); ?> required /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
-                                <label for="rua">Rua<span id="obg">*</span></label>
+                                <label for="endereco">Endereço<span id="obg">*</span></label>
                             </div>
-                            <input name="rua" type="text" id="rua" size="60" required value=<?php echo($nome['rua']); ?> /> 
+                            <input name="endereco" type="text" id="endereco" value=<?php echo($nome['endereco']); ?> required /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
-                                <label for="bairro">Bairro<span id="obg">*</span></label>
+                                <label for="num_endereco">Número<span id="obg">*</span></label>
                             </div>
-                            <input name="bairro" type="text" id="bairro" value=<?php echo($nome['bairro']); ?> size="40" required />
-                        </div> 
-
-                        <div class="option">
-                            <div id="box-label">
-                                <label for="cidade">Cidade<span id="obg">*</span></label>
-                            </div>
-                            <input name="cidade" type="text" id="cidade" size="40" value=<?php echo($nome['cidade']); ?> required />
+                            <input name="num_endereco" type="text" id="num_endereco" value=<?php echo($nome['num_endereco']); ?> required /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
-                                <label for="uf">Estado<span id="obg">*</span></label>
+                                <label for="cep">Profissão<span id="obg">*</span></label>
                             </div>
-                            <input name="uf" type="text" id="uf" size="2" value=<?php echo($nome['uf']); ?> required />
+                            <input name="cep" type="text" id="email" value=<?php echo($nome['profissao']); ?> required  disabled title="Não é permitido alterar a profissão."/> 
                         </div>
-                        <input style="display:none;" name="ibge" type="text" id="ibge" size="8"  /> <!-- Fonte IBGE Obrigatório -->
+
                         <br>
                         <br>
-                        <div class="bottons">                            
+                        <div class="bottons" style="margin-top:30px;">                            
                             <input type="submit" id="register" value="Salvar">  
                             <span id="record">
                                 <?php

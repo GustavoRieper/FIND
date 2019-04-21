@@ -28,31 +28,31 @@
      
     $_SESSION['record'] = "1";
     
-    //header("location: ../index.php");
-    echo($level);
-    echo("<br>");
-    echo($name);
-    echo("<br>");
-    echo($last_name);
-    echo("<br>");
-    echo($email);
-    echo("<br>");
-    echo($senha);
-    echo("<br>");
-    echo($tel);
-    echo("<br>");
-    echo($profissao);
-    echo("<br>");
-    echo($cpf);
-    echo("<br>");
-    echo($lat);
-    echo("<br>");
-    echo($long);
-    echo("<br>");
-    echo($endereco);
-    echo("<br>");
-    echo($num_endereco);
-    echo("<br>");
+    header("location: ../index.php");
+    // echo($level);
+    // echo("<br>");
+    // echo($name);
+    // echo("<br>");
+    // echo($last_name);
+    // echo("<br>");
+    // echo($email);
+    // echo("<br>");
+    // echo($senha);
+    // echo("<br>");
+    // echo($tel);
+    // echo("<br>");
+    // echo($profissao);
+    // echo("<br>");
+    // echo($cpf);
+    // echo("<br>");
+    // echo($lat);
+    // echo("<br>");
+    // echo($long);
+    // echo("<br>");
+    // echo($endereco);
+    // echo("<br>");
+    // echo($num_endereco);
+    // echo("<br>");
    
 
 

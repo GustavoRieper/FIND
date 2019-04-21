@@ -9,9 +9,14 @@ include "../admin/connect.php";
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+
+
+
+
+    
     </head>
     
-    <body>
+    <body >
         <?php include 'default/menu.php';?>
 
    
@@ -29,7 +34,6 @@ include "../admin/connect.php";
                             echo("<option value='0'>Selecione</option>");
                           }
                         ?>
-                        
                         <?php
                             mysqli_set_charset($connect,'utf8'); 
                             $sql = "SELECT DISTINCT profissao FROM professional ORDER BY profissao ASC";
@@ -136,7 +140,39 @@ include "../admin/connect.php";
             </form>
             
         </div>
-           
+       
+        <script>
+
+          // function localizarUsuario(){
+          //       if (window.navigator && window.navigator.geolocation) {
+          //       var geolocation = window.navigator.geolocation;
+          //       geolocation.getCurrentPosition(sucesso, erro);
+          //       } else {
+          //         alert('Geolocalização não suportada em seu navegador.')
+          //       }
+          //       function sucesso(posicao){
+          //         console.log(posicao);
+          //         var latitude = posicao.coords.latitude;
+          //         var longitude = posicao.coords.longitude;
+          //         localStorage.setItem(latitude,latitude);
+          //         localStorage.setItem(longitude,longitude);
+          //         alert(localStorage.getItem(latitude));
+          //         alert('Sua latitude estimada é: ' + latitude + ' e longitude: ' + longitude );
+                  
+          //       }
+          //       function erro(error){
+          //         console.log(error)
+          //       }
+          // }
+          // var movimento = window.navigator.geolocation.watchPosition(function(posicao) {
+			    // console.log(posicao);
+		      // });
+	  
+		      // //para parar de monitorar:
+          // window.navigator.geolocation.clearWatch(movimento);
+
+      
+      </script>
         <div id="mapa" style="height: 70%; width: 100%">
     
     
@@ -156,5 +192,7 @@ include "../admin/connect.php";
             
             
    </div>   
+   
+   
     </body>
 </html>

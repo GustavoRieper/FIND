@@ -5,7 +5,7 @@ include '../admin/connect.php';
 
 $email = $_SESSION['email']; 
 
-$dados= mysqli_query($connect, "SELECT name, last_name, email, tel  FROM user WHERE '$email'= email") or die (mysql_error());
+$dados= mysqli_query($connect, "SELECT 'name', last_name, email, tel  FROM user WHERE '$email'= email") or die (mysql_error());
 $nome = mysqli_fetch_assoc($dados);
 
 ?>
