@@ -7,6 +7,7 @@ include "../admin/connect.php";
     <head>
         <link rel="stylesheet" type="text/css" href="css/request-pro.css">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/assessments.css">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
 
@@ -128,7 +129,6 @@ include "../admin/connect.php";
                     var slider = document.getElementById("myRange");
                     var output = document.getElementById("demo");
                     output.innerHTML = slider.value;
-
                     slider.oninput = function() {
                       output.innerHTML = this.value;
                     }
@@ -142,7 +142,6 @@ include "../admin/connect.php";
         </div>
        
         <script>
-
           // function localizarUsuario(){
           //       if (window.navigator && window.navigator.geolocation) {
           //       var geolocation = window.navigator.geolocation;
@@ -170,7 +169,6 @@ include "../admin/connect.php";
 	  
 		      // //para parar de monitorar:
           // window.navigator.geolocation.clearWatch(movimento);
-
       
       </script>
         <div id="mapa" style="height: 70%; width: 100%">

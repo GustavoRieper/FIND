@@ -69,10 +69,10 @@ if(isset($_SESSION['email'])){
     </head>
 
 <body>
-    <div class="box-register">
-        <form action="../admin/record-pro.php" method="post" name="cadastro">
+    <div class="box-register" style="z-index: 5;">
+        <form action="../admin/record-pro.php" method="post" name="cadastro" >
         <div id="busca" style="margin-top: -40px;">
-            <input id="geocomplete" type="text" placeholder="Informe seu Endereço" autocomplete="off"/>
+            <input id="geocomplete" type="text" placeholder="Informe seu Endereço e o número da residência" autocomplete="off" autofocus style="border-color:RED;"/>
             
             <br>
             <br>
@@ -80,25 +80,24 @@ if(isset($_SESSION['email'])){
             <!--<input id="other" type="text" placeholder="Type in a value" value="" />-->
         </div>
         
-        <fieldset>
+            <fieldset >
+                <label >Numero<span id="obg">*</span></label>
+                <input name="street_number" type="text" value="" required>
+        <div class="box" style="width: 305px; height: 170px; position: absolute; background-color: white; opacity: 0.0;"></div> 
+                <label>Endereço Localizado</label>
+                <input name="formatted_address" type="text" value="" required>
+                
 
-            <label>Endereço Localizado</label>
-            <input name="formatted_address" type="text" value="" >
+                <label>Latitude</label>
+                <input name="lat" type="text" value="" required>
 
-
+                <label>Longitude</label>
+            <input name="lng" type="text" value="" required>
+           
+            </fieldset>
         
-            <label>Numero</label>
-            <input name="street_number" type="text" value="" >
-
-            <label>Latitude</label>
-            <input name="lat" type="text" value="" >
-
-            <label>Longitude</label>
-            <input name="lng" type="text" value="" >
-
             
-        </fieldset>
-<br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br>
         <div class="bottons">
             <a href="../index.php" id="register">Voltar ao login</a>
             <a href="javascript:history.back()" id="register">Voltar</a>

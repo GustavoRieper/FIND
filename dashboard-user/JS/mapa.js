@@ -50,7 +50,6 @@ function carregarPontos(profissaoParametro) {
 				content: "<p>" + ponto.Descricao + "</p>",
 				pixelOffset: new google.maps.Size(-150, 0)
         	};
-
 			infoBox[ponto.Id] = new InfoBox(myOptions);
 			infoBox[ponto.Id].marker = marker;
 			
@@ -91,9 +90,7 @@ function carregarPontos(profissaoParametro) {
 		}
 		
 	})
-
 	console.log(latitude);
-
 	*/
 
 
@@ -117,6 +114,36 @@ function carregarPontos(profissaoParametro) {
 					$(dados).each(function(){
 						//alert($(this)[0].lat);
 						var id = latitude.push($(this)[0].id);
+                        var nota = $(this)[0].nota;
+                        
+                        
+                        if(nota<="1.0"){
+                            var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'>";
+                           }
+                        else if(nota>"1.0" && nota< "1.6"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star-half-alt' style='color:yellow;text-shadow: 0px 1px 2px #000;'></i>";
+                                }
+                        else if(nota>"1.6" && nota< "2.1"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'>";
+                                }
+                        else if(nota>"2.1" && nota< "2.6"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star-half-alt' style='color:yellow;text-shadow: 0px 1px 2px #000;'></i>";
+                                }
+                        else if(nota>"2.5" && nota< "3.1"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'>";
+                                }
+                        else if(nota>"3.1" && nota< "3.6"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star-half-alt' style='color:yellow;text-shadow: 0px 1px 2px #000;'></i>";
+                                }
+                        else if(nota>"3.5" && nota< "4.1"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'>";
+                                }
+                        else if(nota>"4.1" && nota< "4.6"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'>i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star-half-alt' style='color:yellow;text-shadow: 0px 1px 2px #000;'></i>";
+                                }
+                        else if(nota>"4.5" && nota< "5.1"){
+                                 var totalnota="<i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'><i class='fas fa-star' style='color:yellow;text-shadow: 0px 1px 2px #000;'>";
+                                }
 						//longitude.push($(this)[0].long);
 		
 						  
@@ -126,9 +153,23 @@ function carregarPontos(profissaoParametro) {
 							//title: "Meu ponto personalizado! :-D",
 							icon: 'img/' + $(this)[0].profissao + '.png'
 						});
+                        
+                       
+                        
+                        
+                        
+                        
+                        
 						var myOptions = {
-							content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p>",
-							pixelOffset: new google.maps.Size(-150, 0)
+                            
+
+                                content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br>Avaliações: " + totalnota,
+							     pixelOffset: new google.maps.Size(-150, 0)
+                            
+                            
+                            
+//							content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br>Avaliações: <i class='fas fa-star'></i>",
+//							pixelOffset: new google.maps.Size(-150, 0)
 						};
 			
 						infoBox[id] = new InfoBox(myOptions);

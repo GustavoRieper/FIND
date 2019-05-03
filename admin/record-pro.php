@@ -14,11 +14,12 @@
     $tel                        = $_SESSION['tel'];
     $profissao                  = $_SESSION['profissao'];
     $cpf                        = $_SESSION['cpf'];
+    $nota                       = "1.0";
     
 
     $sql = mysqli_query($connect, "INSERT INTO professional
     VALUES
-    (null, '$level', '$name', '$last_name', '$email', '$senha', '$tel', '$profissao', '$cpf', '$lat', '$long', '$endereco', '$num_endereco')");
+    (null, '$level', '$name', '$last_name', '$email', '$senha', '$tel', '$profissao', '$cpf', '$lat', '$long', '$endereco', '$num_endereco', '$nota')");
     /*
     $sql = mysqli_query($connect, 
     "INSERT INTO professional(level, name, last_name, email, senha, tel, profissao, cpf, lat, long, endereco, num_endereco) 
