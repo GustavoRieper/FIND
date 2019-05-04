@@ -13,6 +13,8 @@
 .bloco-stars i{
     font-size: 100px;
     color: #FFE13F;    
+    color:yellow;
+    text-shadow: 0px 1px 2px #000;
 }
 .bloco-stars h2{
     font-family: 'Montserrat', sans-serif;

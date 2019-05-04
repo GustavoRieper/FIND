@@ -163,13 +163,8 @@ function carregarPontos(profissaoParametro) {
 						var myOptions = {
                             
 
-                                content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br>Avaliações: " + totalnota,
-							     pixelOffset: new google.maps.Size(-150, 0)
-                            
-                            
-                            
-//							content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br>Avaliações: <i class='fas fa-star'></i>",
-//							pixelOffset: new google.maps.Size(-150, 0)
+                                content: "<p><b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br>Avaliação: " + totalnota,
+							     pixelOffset: new google.maps.Size(-150, 0),
 						};
 			
 						infoBox[id] = new InfoBox(myOptions);
