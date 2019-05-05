@@ -19,7 +19,13 @@ include "../admin/connect.php";
     
     <body >
         <?php include 'default/menu.php';?>
-
+<!--
+        <script>
+            var UserLat = sessionStorage.getItem('UserLat');
+            var UserLong = sessionStorage.getItem('UserLong');
+            
+        </script>
+-->
    
     <div class="content" onclick="closeUser()">
         <div class="filter">
