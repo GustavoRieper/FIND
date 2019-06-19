@@ -3,12 +3,12 @@ include "../admin/connect.php";
 
 session_start();
 $level      = '2';
-$name       = utf8_decode($_POST['name']);
-$last_name  = utf8_decode($_POST['last_name']);
-$email      = utf8_decode($_POST['email']);
+$name       = $_POST['name'];
+$last_name  = $_POST['last_name'];
+$email      = $_POST['email'];
 $senha      = $_POST['senha'];
 $tel        = $_POST['tel'];
-$profissao  = utf8_decode($_POST['profissao']);
+$profissao  = $_POST['profissao'];
 $cpf        = $_POST['cpf'];
 
 $_SESSION['level']          = $level;

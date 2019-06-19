@@ -19,7 +19,7 @@
                     </div>
                     <div class="row2">
                         <h1 id="title">Usuário</h1>
-                        <p id="desc">Você pode contratar qualquer profissional da sua regial, basta procurar de acordo com sua localização.</p>
+                        <p id="desc">Você pode contratar qualquer profissional da sua região, basta procurar de acordo com sua localização.</p>
                     </div>
                 </div>
             </a>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="row2">
                         <h1 id="title">Profissional</h1>
-                        <p id="desc">Cadastre e fique visível para todas as pessoas que presisam de seus serviços da sua região. O profissional cadastrado também tem acesso ao painel administrativo de sua carreira, gerenciando lucros e gastos.</p>
+                        <p id="desc">Cadastre-se e fique visível para todas as pessoas que presisam de seus serviços na sua região.</p>
                     </div>
                 </div>
             </a>

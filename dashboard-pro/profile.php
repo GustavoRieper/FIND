@@ -121,8 +121,8 @@ $nome = mysqli_fetch_assoc($dados);
     
     <body>
         <div class="content" onclick="closeUser()">
-            <h2 id="title">Perfil</h2>
-            <div class="box-register">
+            <h2 id="title2">Perfil</h2>
+            <div class="box-profile">
                 <div class="col1">
                     <form method="post" action="function/alter-profile.php" onsubmit="return validarSenha();" name="cadastro">
                         <div class="option">
@@ -135,8 +135,9 @@ $nome = mysqli_fetch_assoc($dados);
                         <div class="option">
                             <div id="box-label">
                                 <label for="last-name">Último Nome<span id="obg">*</span></label>
+                                
                             </div>
-                            <input type="text" id="last-name" name="last_name" value=<?php echo($nome['last_name']); ?> required >
+                            <input type="text" id="last-name" name="last_name" value="<?php echo($nome['last_name']); ?>" required >
                         </div>
 
                         <div class="option">
@@ -179,6 +180,7 @@ $nome = mysqli_fetch_assoc($dados);
                                 <label for="tel">Telefone<span id="obg">*</span></label>
                             </div>
                             <input name="tel" type="text" id="tel" value=<?php echo($nome['tel']); ?> required /> 
+                            
                         </div>
 
                         <div class="option">

@@ -5,7 +5,7 @@ include '../admin/connect.php';
 
 $email = $_SESSION['email']; 
 
-$dados= mysqli_query($connect, "SELECT 'name', last_name, email, tel  FROM user WHERE '$email'= email") or die (mysql_error());
+$dados= mysqli_query($connect, "SELECT name, last_name, email, tel  FROM user WHERE '$email'= email") or die (mysql_error());
 $nome = mysqli_fetch_assoc($dados);
 
 ?>
@@ -55,8 +55,8 @@ $nome = mysqli_fetch_assoc($dados);
     
     <body>
         <div class="content" onclick="closeUser()">
-            <h2 id="title">Perfil</h2>
-            <div class="box-register">
+            <h2 id="title2">Perfil</h2>
+            <div class="box-profile">
                 <div class="col1">
                     <form method="post" action="function/alter-profile.php" onsubmit="return validarSenha();" name="cadastro">
                         <div class="option">

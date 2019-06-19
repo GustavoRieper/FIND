@@ -1,0 +1,41 @@
+.box1{
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 3%;
+    height: 300px;
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.box1 img{
+    width: 30%;
+    height: 300px;
+}
+.info{
+    margin-left: 5%;
+    width: 100%;
+}
+.info h2{
+    font-family: 'Roboto', sans-serif;
+}
+#box_p{
+    width: 50%;
+}
+#box_p input{
+    width: 100%;
+}
+label{
+    font-family: 'Raleway', sans-serif;
+}
+#endereco{
+    width: 100%;
+}
+.option{
+    text-align: left;
+    width: 100%;
+    background-color: #fafafa;
+}
+form{
+    width: 100%;
+    text-align: left!important;
+}

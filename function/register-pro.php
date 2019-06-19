@@ -114,7 +114,7 @@
     
     <body>
         <div class="box-register">
-            <img id="image-logo" src="../image/default/logo_blue.png">
+            <img id="image-logo" src="../image/default/Logo_VIUO.png">
                 <div class="col1">
                     <form method="post" action="register-pro2.php" onsubmit="return validarSenha();" name="cadastro">
                         <div class="option">

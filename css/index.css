@@ -5,12 +5,12 @@ body{
 .box-login{
     width: 30%;
     margin-left: 35%;
-    margin-top: 8%;
+    margin-top: 5%;
 }
 #image-logo{
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin-left: 25%;
+    margin-bottom: 50px;
 }
 .box-login form{
     display: flex;
@@ -33,8 +33,8 @@ body{
     color: darkgreen;
 }
 .box-login form input{
-    width: 50%;
-    height: 30px;
+    width: 60%;
+    height: 45px;
     margin: 10px;
     padding: 5px;
     border-radius: 5px;

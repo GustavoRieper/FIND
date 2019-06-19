@@ -45,14 +45,13 @@ include '../admin/connect.php';
         <h2 id="profissao"><?php echo($nome['profissao']); ?></h2>
     </div>
     <div class="logo">
-        <img src="../image/default/ico_branco.png">
+        <img src="../image/default/Logo_VIUO.png" title="VIUO">
     </div>
     <div class="content-nav">
         <nav>
             <ul>
                 <li><a href="index.php"><i class="fas fa-home"></i>Início</a></li>
                 <li><a href="profile.php"><i class="fas fa-user-cog"></i>Perfil</a></li>
-                <li><a href="#"><i class="fas fa-briefcase"></i>Negócios</a></li>
             </ul>
         </nav>
         <div class="user" onclick="contentUser()">

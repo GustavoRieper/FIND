@@ -47,7 +47,7 @@ include '../admin/connect.php';
         
     </div>
     <div class="logo">
-        <img src="../image/default/ico_branco.png">
+        <img src="../image/default/Logo_VIUO.png">
     </div>
     <div class="content-nav">
         <nav>

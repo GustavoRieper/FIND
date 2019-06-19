@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 06-Abr-2019 às 18:02
+-- Generation Time: 09-Maio-2019 às 02:57
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -84,7 +84,8 @@ CREATE TABLE `profession` (
 
 INSERT INTO `profession` (`cd_profissao`, `nm_profissao`, `ds_profissao`) VALUES
 (1, 'Eletricista', 'Eletricista residencial'),
-(2, 'Marceneiro', 'Marceneiro');
+(2, 'Marceneiro', 'Marceneiro'),
+(0, 'Pintor', 'Printor');
 
 -- --------------------------------------------------------
 
@@ -102,26 +103,31 @@ CREATE TABLE `professional` (
   `tel` varchar(15) NOT NULL,
   `profissao` varchar(50) NOT NULL,
   `cpf` varchar(11) NOT NULL,
-  `cep` int(8) NOT NULL,
-  `rua` varchar(50) NOT NULL,
-  `bairro` varchar(50) NOT NULL,
-  `cidade` varchar(50) NOT NULL,
-  `uf` varchar(2) NOT NULL,
   `lat` varchar(20) NOT NULL COMMENT 'latitude',
-  `long` varchar(20) NOT NULL COMMENT 'longitude'
+  `long` varchar(50) NOT NULL COMMENT 'longitude',
+  `endereco` varchar(100) NOT NULL,
+  `num_endereco` varchar(50) NOT NULL,
+  `nota` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Extraindo dados da tabela `professional`
 --
 
-INSERT INTO `professional` (`id`, `level`, `name`, `last_name`, `email`, `senha`, `tel`, `profissao`, `cpf`, `cep`, `rua`, `bairro`, `cidade`, `uf`, `lat`, `long`) VALUES
-(2, 2, 'Airton', 'Rieper', 'airtonrieper@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '2147483647', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC', '-26.331701', '-48.834186'),
-(6, 2, 'Ivonete', 'Rieper', 'ivoneterieper@gmail.com', 'teste', '(47) 99688-5321', 'Marceneiro', '09388815904', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC', '-26.278354', '-48.835632'),
-(8, 2, 'Gustavo', 'Rieper', 'gustavorieper@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '09388815904', 89210128, 'Rua', 'Itaum', 'Joinville', 'SC', '-26.288359', '-48.848631'),
-(9, 2, 'Jean', 'Schultz', 'jean.schultz@ielusc.br', 'teste123', '(47) 99199-9999', 'Eletricista', '02898329932', 89227315, 'Rua Xaxim', 'Iririú', 'Joinville', 'SC', '-26.267841', '-48.825433'),
-(10, 2, 'Paula', 'Picolli', 'paulapicolli@gmail.com', 'teste', '(47) 98887-7777', 'Marceneiro', '09388815903', 89210128, 'Rua Inácio de Oliveira', 'Itaum', 'Joinville', 'SC', '-26.292101', '-48.850079'),
-(11, 2, 'Zelindo Silvio', 'Petri', 'zelindo@gmail.com', 'teste', '(47) 99682-7273', 'Marceneiro', '09388815904', 89210128, 'Rua', 'Itaum', 'Joinville', 'SC', '-26.289597', '-48.856392');
+INSERT INTO `professional` (`id`, `level`, `name`, `last_name`, `email`, `senha`, `tel`, `profissao`, `cpf`, `lat`, `long`, `endereco`, `num_endereco`, `nota`) VALUES
+(2, 2, 'Airton', 'Rieper', 'airtonrieper@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '2147483647', '-26.331701', '-48.834186', '', '0', '1.0'),
+(6, 2, 'Ivonete', 'Rieper', 'ivoneterieper@gmail.com', 'teste', '(47) 99688-5321', 'Marceneiro', '09388815904', '-26.278354', '-48.835632', '', '0', '2.0'),
+(8, 2, 'Gustavo', 'Rieper', 'gustavorieper@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '09388815904', '-26.288359', '-48.848631', 'Rua Inácio de Oliveira, 350 - Itaum, Joinville - SC, 89210-128, Brasil', '0', '2.0'),
+(9, 2, 'Jean', 'Schultz', 'jean.schultz@ielusc.br', 'teste123', '(47) 99199-9999', 'Eletricista', '02898329932', '-26.267841', '-48.825433', '', '0', '1.5'),
+(10, 2, 'Paula', 'Picolli', 'paulapicolli@gmail.com', 'teste', '(47) 98887-7777', 'Marceneiro', '09388815903', '-26.292101', '-48.850079', '', '0', '3.0'),
+(11, 2, 'Zelindo Silvio', 'Petri', 'zelindo@gmail.com', 'teste', '(47) 99682-7273', 'Marceneiro', '09388815904', '-26.289597', '-48.856392', '', '0', '2.5'),
+(13, 2, 'Ronaldo', 'Fenomeno', 'dentu?o@gmail.com', 'teste', '47996827273', 'Eletricista', '09388815904', '-26.3308062', '-48.833311', 'Rua Inácio de Oliveira, 350 - Itaum, Joinville - SC, 89210-128, Brasil', '350', '2.0'),
+(14, 2, 'Michelangelo', 'Simoni', 'micamica@gmail.com', 'teste', '(47) 99672-7273', 'Pintor', '09388815904', '-26.318984', '-48.844330000000014', 'R. Cel. Francisco Gomes, 12 - Anita Garibaldi, Joinville - SC, 89202-073, Brasil', '12', '1.5'),
+(15, 2, 'Leonardo', 'da Vinci', 'leo@gmail.com', 'teste', '(47) 99672-7273', 'Pintor', '09388815904', '-26.3050509', '-48.85932249999996', 'R. Aquidaban, 222 - Glória, Joinville - SC, 89216-295, Brasil', '222', '3.3'),
+(16, 2, 'Roger', 'Carvalho', 'rogercarvalho@gmail.com', 'teste', '(47) 98839-4193', 'Pintor', '09388815904', '-26.2150743', '-48.905276000000015', 'R. Joinville, 13721 - Centro (Pirabeiraba), Joinville - SC, Brasil', '13721', '4.2'),
+(17, 2, 'Thiago', 'Avila', 'thiagoavilafolks@gmail.com', '1234', '(47) 7070-7070', 'Marceneiro', '09388815904', '-26.264409', '-48.85447799999997', 'R. Iguaçu, 533 - Santo Antônio, Joinville - SC, 89218-180, Brasil', '533', '5'),
+(21, 2, 'Cristov?o', 'Colombo', 'cris@gmail.com', 'teste', '(47) 99682-7273', 'Eletricista', '09388815904', '-26.3361934', '-48.84373740000001', 'R. Floresta - Floresta, Joinville - SC, 89211-690, Brasil', '10', '2.7'),
+(22, 2, 'Maicol', 'Peterson', 'Maicol@gmail.com', 'teste', '(47) 99682-7273', 'Pintor', '09388815904', '-26.324387', '-48.84394550000002', 'R. Monsenhor Gercino, 60 - Paranaguamirim, Joinville - SC, 89210-000, Brasil', '60', '1.0');
 
 -- --------------------------------------------------------
 
@@ -146,8 +152,10 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `level`, `name`, `last_name`, `email`, `senha`, `tel`) VALUES
 (2, 3, 'José', 'Pereira', 'josepereira@find.com', 'teste', '(47) 99682-7273'),
 (3, 3, 'Jean', 'Rafael', 'jeanraf@gmail.com', 'teste1234', '(99) 99999-9999'),
-(4, 3, 'Usuário', 'Find', 'user@find.com.br', 'teste', '(47) 99682-7272'),
-(5, 3, 'Maicol', 'Almeida', 'maicol@gmail.com', 'teste', '(47) 99682-7273');
+(4, 3, '', '', 'user@find.com.br', 'teste', ''),
+(5, 3, 'Maicol', 'Almeida', 'maicol@gmail.com', 'teste', '(47) 99682-7273'),
+(6, 3, 'Ronaldinho', 'Gaucho', 'cheirador@gmail.com', 'teste', '(47) 99682-7273'),
+(7, 3, 'adriana', 'silva', 'adriana@gmail.com', '12345', '(99) 999-9999');
 
 --
 -- Indexes for dumped tables
@@ -206,13 +214,13 @@ ALTER TABLE `calendar`
 -- AUTO_INCREMENT for table `professional`
 --
 ALTER TABLE `professional`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables

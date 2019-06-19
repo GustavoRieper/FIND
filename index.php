@@ -11,7 +11,7 @@ session_start();
     
     <body>
         <div class="box-login">
-            <img id="image-logo" src="image/default/logo_blue.png">
+            <img id="image-logo" src="image/default/Logo_VIUO.png">
             <form method="post" action="admin/autentication.php">
                 <input type="email" required placeholder="E-mail" name="email">
                 <input type="password" required placeholder="Senha" name="password">

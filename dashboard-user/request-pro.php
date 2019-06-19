@@ -30,7 +30,7 @@ include "../admin/connect.php";
     <div class="content" onclick="closeUser()">
         <div class="filter">
             <form action="function/filter-pro.php" method="post">
-                <labe>Selecione o tipo de profissional:</labe>
+                <label>Selecione o tipo de profissional:</label>
                 <div class="custom-select" style="width:200px;">
                     <select id="select" name="profissao" required>
                         <?php
@@ -177,13 +177,13 @@ include "../admin/connect.php";
           // window.navigator.geolocation.clearWatch(movimento);
       
       </script>
-        <div id="mapa" style="height: 70%; width: 100%">
+        <div id="mapa" style="height: 100%; width: 100%">
     
     
 		<script src="js/jquery.min.js"></script>
  
         <!-- Maps API Javascript -->
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJwO9baL-pMt1EN4PWu5LHw6KJu0lXGc4&amp;sensor=false"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJwO9baL-pMt1EN4PWu5LHw6KJu0lXGc4&amp"></script>
         
         <!-- Caixa de informação -->
         <script src="js/infobox.js"></script>
