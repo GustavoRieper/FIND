@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+html,body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.content{
+    width: 100%;
+    height: 100%;
+
+}
+form{
+    Display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 120%;
+}
+#map{
+    height: 100%;
+    width: 100%;
+}
+.filter{
+    width: 50%;
+    margin-left: 2%;
+    margin-right: 10%;
+    margin-top: 40px;
+    height: 190px;
+}
+#filtrar{
+    font-size: 140%;
+    width: 30%;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #f88;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.7s;
+}
+#filtrar:hover{
+    background-color: #d88282;
+    transition: all 0.7s;
+}
+#ocult{
+    display: none;
+}
+#contratar{
+    background-color: #3fa7d8; 
+    color: #FFF;
+    border: none;
+    font-size: 20px;
+    transition: all 0.7s;
+    cursor: pointer;
+}
+#contratar:hover{
+    color: #ccc;
+    transition: all 0.7s;
+    text-decoration: underline;
+}
+label{
+font-family: 'PT Sans', sans-serif;
+}
+.custom-select {
+  position: relative;
+  font-family: 'PT Sans', sans-serif;
+    margin: 20px;
+    margin-left: 50px;
+    width: 200px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+/*  top: 100%;*/
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+    text-align: center;
+    font-family: 'Muli', sans-serif;
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 25px; /* Specified height */
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */ 
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  background: #4CAF50; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;   
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
