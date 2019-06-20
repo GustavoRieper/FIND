@@ -19,7 +19,7 @@ include '../admin/connect.php';
     }
 ?>
 <head>
-    <title>FIND - <?php echo($page); ?></title>
+    <title>VIUO - <?php echo($page); ?></title>
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script>

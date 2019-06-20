@@ -9,6 +9,10 @@ body{
     position: absolute;
     margin-top: -200px;
 }
+#info{
+    position: absolute;
+    font-family: 'PT Sans', sans-serif;
+}
 .box-register{
     width: 80%;
     margin-left: 10%;
@@ -19,7 +23,9 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding-top: 10px;
 }
+
 input, #select{
     padding: 5px;
     width: 200px;

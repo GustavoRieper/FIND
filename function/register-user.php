@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIND - Registro</title>
+        <title>VIUO - Registro</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/register.css">
         <link rel="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"/>

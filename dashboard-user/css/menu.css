@@ -9,6 +9,7 @@
     display: flex;
     align-content: center;
     background-color: #393939;
+    z-index: 99999;
 }
 .pro{
     width: 45%;
@@ -88,6 +89,7 @@ nav ul li a i{
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index: 99999;
 }
 .user img{
     width: 30%;
@@ -105,6 +107,7 @@ nav ul li a i{
     border-radius: 12px 0px 10px 10px;
     box-shadow: 2px 3px 30px #CCC;
     background-color: #FFF;
+        z-index: 9999;
 }
 .content-user ul{
     padding: 10px;

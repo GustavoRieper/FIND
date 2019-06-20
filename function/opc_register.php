@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIND - Registrar</title>
+        <title>VIUO - Registrar</title>
         <link rel="stylesheet" type="text/css" href="../css/opc_register.css">
     </head>
     

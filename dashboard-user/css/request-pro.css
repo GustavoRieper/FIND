@@ -42,6 +42,22 @@ form{
     background-color: #d88282;
     transition: all 0.7s;
 }
+#ocult{
+    display: none;
+}
+#contratar{
+    background-color: #3fa7d8; 
+    color: #FFF;
+    border: none;
+    font-size: 20px;
+    transition: all 0.7s;
+    cursor: pointer;
+}
+#contratar:hover{
+    color: #ccc;
+    transition: all 0.7s;
+    text-decoration: underline;
+}
 label{
 font-family: 'PT Sans', sans-serif;
 }

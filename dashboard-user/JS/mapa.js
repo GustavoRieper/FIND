@@ -7,7 +7,7 @@ function initialize() {
 	var latlng = new google.maps.LatLng(-18.8800397, -47.05878999999999);
 	
     var options = {
-        zoom: 5,
+        zoom: 20,
 		center: latlng,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -123,7 +123,7 @@ function carregarPontos(profissaoParametro) {
 						  
 						var marker = new google.maps.Marker({
 							position: new google.maps.LatLng($(this)[0].lat, $(this)[0].long),
-							title: "Meu ponto personalizado! :-D",
+							title: "",
 							icon: 'img/' + $(this)[0].profissao + '.png'
 						});
                         
@@ -136,7 +136,10 @@ function carregarPontos(profissaoParametro) {
 						var myOptions = {
                             
 
-                                content: "<p>[Foto]<b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br><p>Avaliação: " + totalnota + "</p><br><h3><a href='#'>Contratar Profissional</h3>",
+//                                content: "<p>[Foto]<b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br><p>Avaliação: " + totalnota + "</p><br><h3><a href='contract.php?" + $(this)[0].id +"'>Contratar Profissional</h3>",
+//							     pixelOffset: new google.maps.Size(-150, 0),
+                            
+                                content: "<p>[Foto]<b>" + $(this)[0].profissao + ": </b>" + $(this)[0].name + " " + $(this)[0].last_name + "</p><br><p>Avaliação: " + totalnota + "</p><br><h3><form action='contract.php' method='GET'><input id='ocult' name='id' type='number' value='" + $(this)[0].id +"'><input id='contratar' type='submit' value='Contratar'></form>",
 							     pixelOffset: new google.maps.Size(-150, 0),
 						};
 			

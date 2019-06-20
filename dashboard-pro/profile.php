@@ -129,7 +129,7 @@ $nome = mysqli_fetch_assoc($dados);
                             <div id="box-label">
                                 <label for="name">Nome<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="name" name="name" value=<?php echo($nome['name']); ?> required>
+                            <input type="text" id="name" name="name" value='<?php echo($nome['name']); ?>' required>
                         </div>
 
                         <div class="option">
@@ -144,7 +144,7 @@ $nome = mysqli_fetch_assoc($dados);
                             <div id="box-label">
                                 <label for="email">E-mail<span id="obg">*</span></label>
                             </div>
-                            <input type="text" id="email" name="email" value=<?php echo($nome['email']); ?> required disabled title="Não é permitido alterar o email.">
+                            <input type="text" id="email" name="email" value='<?php echo($nome['email']); ?>' required disabled title="Não é permitido alterar o email.">
                         </div>
 
                         <div class="option">
@@ -179,7 +179,7 @@ $nome = mysqli_fetch_assoc($dados);
                             <div id="box-label">
                                 <label for="tel">Telefone<span id="obg">*</span></label>
                             </div>
-                            <input name="tel" type="text" id="tel" value=<?php echo($nome['tel']); ?> required /> 
+                            <input name="tel" type="text" id="tel" value='<?php echo($nome['tel']); ?>' required /> 
                             
                         </div>
 
@@ -187,21 +187,21 @@ $nome = mysqli_fetch_assoc($dados);
                             <div id="box-label">
                                 <label for="endereco">Endereço<span id="obg">*</span></label>
                             </div>
-                            <input name="endereco" type="text" id="endereco" value=<?php echo($nome['endereco']); ?> required /> 
+                            <input name="endereco" type="text" id="endereco" value='<?php echo($nome['endereco']); ?>' required /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="num_endereco">Número<span id="obg">*</span></label>
                             </div>
-                            <input name="num_endereco" type="text" id="num_endereco" value=<?php echo($nome['num_endereco']); ?> required /> 
+                            <input name="num_endereco" type="text" id="num_endereco" value='<?php echo($nome['num_endereco']); ?>' required /> 
                         </div>
 
                         <div class="option">
                             <div id="box-label">
                                 <label for="cep">Profissão<span id="obg">*</span></label>
                             </div>
-                            <input name="cep" type="text" id="email" value=<?php echo($nome['profissao']); ?> required  disabled title="Não é permitido alterar a profissão."/> 
+                            <input name="cep" type="text" id="email" value='<?php echo($nome['profissao']); ?>' required  disabled title="Não é permitido alterar a profissão."/> 
                         </div>
 
                         <br>

@@ -4,7 +4,7 @@ session_start();
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIND - Login</title>
+        <title>VIUO - Login</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="css/index.css">
     </head>

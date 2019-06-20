@@ -27,7 +27,7 @@ if(isset($_SESSION['email'])){
 
 <html>
     <head>
-        <title>FIND - Registro</title>
+        <title>VIUO - Registro</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/register.css">
         <style type="text/css" media="screen">
@@ -66,11 +66,99 @@ if(isset($_SESSION['email'])){
                 text-decoration: underline; 
                 }
         </style>
-    </head>
+        
+        
+        
+        <!-- Adicionando JQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+
+    <!-- Adicionando Javascript -->
+    <script type="text/javascript" >
+
+        $(document).ready(function() {
+
+            function limpa_formulário_cep() {
+                // Limpa valores do formulário de cep.
+                $("#rua").val("");
+                $("#bairro").val("");
+                $("#cidade").val("");
+                $("#uf").val("");
+                $("#ibge").val("");
+            }
+            
+            //Quando o campo cep perde o foco.
+            $("#cep").blur(function() {
+
+                //Nova variável "cep" somente com dígitos.
+                var cep = $(this).val().replace(/\D/g, '');
+
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
+
+                    //Valida o formato do CEP.
+                    if(validacep.test(cep)) {
+
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        $("#rua").val("...");
+                        $("#bairro").val("...");
+                        $("#cidade").val("...");
+                        $("#uf").val("...");
+                        $("#ibge").val("...");
+
+                        //Consulta o webservice viacep.com.br/
+                        $.getJSON("https://viacep.com.br/ws/"+ cep +"/json/?callback=?", function(dados) {
+
+                            if (!("erro" in dados)) {
+                                //Atualiza os campos com os valores da consulta.
+                                $("#rua").val(dados.logradouro);
+                                $("#bairro").val(dados.bairro);
+                                $("#cidade").val(dados.localidade);
+                                $("#uf").val(dados.uf);
+                                $("#ibge").val(dados.ibge);
+                            } //end if.
+                            else {
+                                //CEP pesquisado não foi encontrado.
+                                limpa_formulário_cep();
+                                alert("CEP não encontrado.");
+                            }
+                        });
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                } //end if.
+                else {
+                    //cep sem valor, limpa formulário.
+                    limpa_formulário_cep();
+                }
+            });
+        });
+
+    </script>
+        
+         <script language="JavaScript">
+         function mascara(t, mask){
+         var i = t.value.length;
+         var saida = mask.substring(1,0);
+         var texto = mask.substring(i)
+         if (texto.substring(0,1) != saida){
+         t.value += texto.substring(0,1);
+         }
+         }
+         </script>
 
 <body>
+   
     <div class="box-register" style="z-index: 5;">
-        <form action="../admin/record-pro.php" method="post" name="cadastro" >
+         <span id="info">É importante a informação de localização correta, pois através dela você será visualizado por outros usuários.</span>
+        <form action="../admin/record-pro.php" method="post" name="cadastro" onsubmit="return validarcep();">
         <div id="busca" style="margin-top: -40px;">
             <input id="geocomplete" type="text" placeholder="Informe seu Endereço e o número da residência" autocomplete="off" autofocus style="border-color:RED;"/>
             
@@ -81,18 +169,54 @@ if(isset($_SESSION['email'])){
         </div>
         
             <fieldset >
+                                
+                <label style="font-weight: bold;">Confirme o CEP:<span id="obg">*</span></label>
+                <input name="cep" type="text" id="cep" value="" size="10" maxlength="9" required onkeypress="mascara(this, '#####-###')" /></label><br />
+            
+                <script>
+                     function validarcep(){
+                            cep = document.cadastro.cep.value;
+                            postal_code = document.cadastro.postal_code.value;
+                            if (cep != postal_code){ 
+                                 alert("Ops... Confirmação de CEP incorreta!");
+                                document.cadastro.cep.focus();
+                                document.cadastro.cep.style.borderColor = "red";
+                                document.cadastro.postal_code.style.borderColor = "red";
+                                 return false;
+                            }
+                            return true;
+                     }
+                </script> 
+            
+
+                
                 <label >Numero<span id="obg">*</span></label>
                 <input name="street_number" type="text" value="" required>
-        <div class="box" style="width: 305px; height: 170px; position: absolute; background-color: white; opacity: 0.0;"></div> 
+        <div class="box" style="width: 305px; height: 420px; position: absolute; background-color: white; opacity: 0.0;"></div> 
                 <label>Endereço Localizado</label>
                 <input name="formatted_address" type="text" value="" required>
+                
+                <label>Bairro</label>
+                <input name="sublocality" type="text" value="">
+                
+                <label>Cep Capturado</label>
+                <input name="postal_code" type="text" value="">                
+                
+                
+                <label>Cidade:
+                <input name="cidade" type="text" id="cidade" size="40" /></label>
+                
+                <label>Estado</label>
+                <input name="administrative_area_level_1" type="text" value="">
                 
 
                 <label>Latitude</label>
                 <input name="lat" type="text" value="" required>
 
                 <label>Longitude</label>
-            <input name="lng" type="text" value="" required>
+                <input name="lng" type="text" value="" required>          
+                
+
            
             </fieldset>
         
@@ -128,7 +252,6 @@ if(isset($_SESSION['email'])){
         <div class="map_canvas"></div>
         </div>
     </div>
-
 </body>
 
 
