@@ -7,34 +7,97 @@ include "../admin/connect.php";
     <head>
         <link rel="stylesheet" type="text/css" href="css/request-pro.css">
         <link rel="stylesheet" type="text/css" href="css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="css/assessments.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/geocomplete/1.7.0/jquery.geocomplete.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
+
+
+
+
+    
     </head>
     
     <body>
         <?php include 'default/menu.php';?>
 
-    
+   
     <div class="content" onclick="closeUser()">
         <div class="filter">
-            <form name="profissaoForm" id="profissaoForm">
-                <labe>Selecione o tipo de profissional:</labe>
+            <form action="function/filter-pro.php" method="post">
+                <label>Selecione o profissional:</label>
                 <div class="custom-select" style="width:200px;">
                     <select id="select" name="profissao" required>
-                        <option value="0">Selecione</option>
+                        <?php
+                          if(isset($_SESSION['pro'])){
+                            $filter1 = $_SESSION['pro'];
+                            echo("<option value='$filter1'>$filter1</option>");
+                          }else{
+                            echo("<option value='0'>Selecione</option>");
+                          }
+                        ?>
                         <?php
                             mysqli_set_charset($connect,'utf8'); 
                             $sql = "SELECT DISTINCT profissao FROM professional ORDER BY profissao ASC";
                             $resultado = mysqli_query($connect,$sql);
                             $numero_linhas = mysqli_num_rows($resultado);
                             while ($linha = mysqli_fetch_array($resultado)){
-                                $profissao = $linha["profissao"];
-                                echo("<option>$profissao</option>");
+                                $profissao = $linha["profissao"];                               
+                                echo("<option value='$profissao'>$profissao</option>");
                             }
                         ?>
                     </select>
-                    
                 </div>
+                
+                <label>Selecione a Cidade:</label>
+                <div class="custom-select" style="width:200px;">
+                    <select id="select" name="cidade" required>
+                        <?php
+                          if(isset($_SESSION['cidade'])){
+                            $filter2 = $_SESSION['cidade'];
+                            echo("<option value='$filter2'>$filter2</option>");
+//                              echo("<option value=''>Nenhuma</option>");   *** Rever 
+                          }else{
+                            echo("<option value='0'>Selecione</option>");
+                          }
+                        ?>
+                        <?php
+                            mysqli_set_charset($connect,'utf8'); 
+                            $sql = "SELECT DISTINCT cidade FROM professional ORDER BY cidade ASC";
+                            $resultado = mysqli_query($connect,$sql);
+                            $numero_linhas = mysqli_num_rows($resultado);
+                            while ($linha = mysqli_fetch_array($resultado)){
+                                $cidade = $linha["cidade"];                                
+                                echo("<option value='$cidade'>$cidade</option>");
+                            }
+                        ?>
+                    </select>
+                </div>
+                
+                <label>Selecione o Bairro:</label>
+                <div class="custom-select" style="width:200px;">
+                    <select id="select" name="bairro" required>
+                        <?php
+                          if(isset($_SESSION['bairro'])){
+                            $filter3 = $_SESSION['bairro'];
+                            echo("<option value='$filter3'>$filter3</option>");
+                          }else{
+                            echo("<option value='0'>Selecione</option>");
+                          }
+                        ?>
+                        <?php
+                            mysqli_set_charset($connect,'utf8'); 
+                            $sql = "SELECT DISTINCT bairro FROM professional ORDER BY bairro ASC";
+                            $resultado = mysqli_query($connect,$sql);
+                            $numero_linhas = mysqli_num_rows($resultado);
+                            while ($linha = mysqli_fetch_array($resultado)){
+                                $bairro = $linha["bairro"];                                
+                                echo("<option value='$bairro'>$bairro</option>");
+                            }
+                        ?>
+                    </select>
+                </div>
+                
                 <script>
                     var x, i, j, selElmnt, a, b, c;
                     /*look for any elements with the class "custom-select":*/
@@ -109,19 +172,7 @@ include "../admin/connect.php";
                     then close all select boxes:*/
                     document.addEventListener("click", closeAllSelect);
                     </script>
-                <div class="slidecontainer">
-                  <input type="range" min="1" max="50" value="25" class="slider" id="myRange">
-                    <p>Distância <span id="demo"></span> Km</p>
-                </div>
-                <script>
-                    var slider = document.getElementById("myRange");
-                    var output = document.getElementById("demo");
-                    output.innerHTML = slider.value;
 
-                    slider.oninput = function() {
-                      output.innerHTML = this.value;
-                    }
-                </script>
                 
                 <input type="submit" id="filtrar" value="Filtrar">
                 
@@ -129,14 +180,13 @@ include "../admin/connect.php";
             </form>
             
         </div>
-           
-        <div id="mapa" style="height: 70%; width: 100%">
+        <div id="mapa" style="height: 100%; width: 100%">
     
     
 		<script src="js/jquery.min.js"></script>
  
         <!-- Maps API Javascript -->
-        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBJwO9baL-pMt1EN4PWu5LHw6KJu0lXGc4&amp;sensor=false"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJwO9baL-pMt1EN4PWu5LHw6KJu0lXGc4&amp"></script>
         
         <!-- Caixa de informação -->
         <script src="js/infobox.js"></script>
@@ -149,12 +199,7 @@ include "../admin/connect.php";
             
             
    </div>   
-    <div class="professional">
-      <?php
-        echo($_SESSION['name-pro']);
-      ?>
-    </div>  
-            
-
+   
+   
     </body>
 </html>

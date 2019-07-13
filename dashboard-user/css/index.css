@@ -1,17 +1,16 @@
 body{
     margin: 0px;
-}
-.content{
-    width: 100%;
-    height: auto;
+    position: absolute;
+    height: 100%;
 }
 .options{
-    width: 80%;
-    margin-left: 10%;
-    height: auto;
+    width: 100%;
+    /* margin-left: 10%; */
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 .options .opc{
     width: 15%;
@@ -19,16 +18,14 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-content: stretch;
-    margin-left: 25px;
-    margin-right: 25px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 50px;
     padding: 20px;
     
 }
 .options .opc i{
-    font-size: 1100%;
+    font-size: 1000%;
     margin-bottom: 10px;
+    width: 100%;
 }
 .options .opc a{
     text-decoration: none;
@@ -41,6 +38,7 @@ body{
 .options .opc a:hover{
     color: #000;
     transition: 0.7s;
+    font-size: 170%;
 }
 .options .opc a span{
     font-size: 140%;
@@ -48,4 +46,9 @@ body{
     margin-left: 0px;
     padding-top: 10px;
     color: red;
+}
+#news{
+    position: absolute;
+    font-size: 50%;
+    margin-left: -10px;
 }

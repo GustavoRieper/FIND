@@ -4,7 +4,7 @@ include '../admin/connect.php';
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIND ADM - Lista de Usuários</title>
+        <title>VIUO ADM - Lista de Usuários</title>
         <link rel="stylesheet" type="text/css" href="css/list-user.css">
         <link rel="stylesheet" type="text/css" href="css/default.css">
     </head>

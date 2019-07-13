@@ -55,8 +55,8 @@ $nome = mysqli_fetch_assoc($dados);
     
     <body>
         <div class="content" onclick="closeUser()">
-            <h2 id="title">Perfil</h2>
-            <div class="box-register">
+            <h2 id="title2">Perfil</h2>
+            <div class="box-profile">
                 <div class="col1">
                     <form method="post" action="function/alter-profile.php" onsubmit="return validarSenha();" name="cadastro">
                         <div class="option">

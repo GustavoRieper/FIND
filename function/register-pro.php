@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>FIND - Registro</title>
+        <title>VIUO - Registro</title>
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="../css/register.css">
         <link rel="script" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.min.js"/>
@@ -108,14 +108,15 @@
             
             
         </script>
+    
     </head>
     
     
     <body>
         <div class="box-register">
-            <img id="image-logo" src="../image/default/logo_blue.png">
+            <img id="image-logo" src="../image/default/Logo_VIUO.png">
                 <div class="col1">
-                    <form method="post" action="../admin/record-pro.php" onsubmit="return validarSenha();" name="cadastro">
+                    <form method="post" action="register-pro2.php" onsubmit="return validarSenha();" name="cadastro">
                         <div class="option">
                             <div id="box-label">
                                 <label for="name">Nome<span id="obg">*</span></label>
@@ -180,7 +181,7 @@
                             <select id="select" name="profissao" required>
                                 <?php
                                     mysqli_set_charset($connect,'utf8'); 
-                                    $sql = "SELECT nm_profissao FROM profissoes ORDER BY nm_profissao ASC"; 
+                                    $sql = "SELECT nm_profissao FROM profession ORDER BY nm_profissao ASC"; 
                                     $resultado = mysqli_query($connect,$sql);
                                     $numero_linhas = mysqli_num_rows($resultado);
                                     while ($linha = mysqli_fetch_array($resultado)){
@@ -250,7 +251,7 @@
                             
                             </script>
                         </div>
-                    
+                    <!--
                         <div class="option">
                             <div id="box-label">
                                 <label for="cep">CEP<span id="obg">*</span></label>
@@ -286,14 +287,18 @@
                             <input name="uf" type="text" id="uf" size="2" required/>
                         </div>
                         <input style="display:none;" name="ibge" type="text" id="ibge" size="8"  /> <!-- Fonte IBGE Obrigatório -->
-                    
-                        <div class="bottons">
+
+                        <div class="bottons" style="margin-top:200px;">
                             <a href="../index.php" id="register">Voltar ao login</a>
-                            <input type="submit" id="register" value="Registrar" onClick="valida();valida_cpf(cpf)">  
+                            <input type="submit" id="register" value="Próximo" onClick="valida();valida_cpf(cpf)">  
                         </div>
                     </form>
                 </div>                          
         </div>
+
+
+
+       
     </body>
 
 </html>

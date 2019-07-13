@@ -1,18 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=PT+Sans');
 @import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 .menu{
     width: 100%;
-    height: 60px;   
+    height: 20%;
     display: flex;
     align-content: center;
-    background-color: #3f7eff;
-    z-index: 999;
+    background-color: #393939;
 }
 .pro{
     width: 45%;
     margin-left: 50px;
+    align-items: center;
+    display: flex;
 }
-.pro h2{
+#profissao{
     font-family: 'PT Sans', sans-serif;
     font-weight: 400;
     color: #FFF;
@@ -24,15 +28,25 @@ h3{
 .logo{
     display: flex;
     justify-content: center;
-    width: 10%;
+    width: 15%;
+    align-items: center;
+    margin-top: -30px;
 }
 .logo img{
     width: 100%;
     margin-right: 5%;
 }
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
 .content-nav{
     width: 45%;
     display: flex;
+    align-items: center;
 }
 nav{
     display: flex;
@@ -53,29 +67,32 @@ nav ul li a{
     font-family: 'PT Sans', sans-serif;
     text-decoration: none;
     color: #FFF;
-    font-size: 110%;
+    font-size: 140%;
     font-weight: 550;
     transition: all 0.7s;
 }
 nav ul li a:hover{
-    font-size: 120%;
+/*    font-size: 130%;*/
     transition: all 0.7s;
     color: #d0cece;
+    border-top: solid 2px #d0cece;
+    border-bottom: solid 2px #d0cece;
 }
 nav ul li a i{
-    padding-right: 5px;
+    padding-right: 5px;    
 }
 .user{
     width: 30%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
     cursor: pointer;
+    z-index: 99999;
 }
 .user img{
-    width: 45px;
-    height: 45px;
+    width: 30%;
+    height: auto;
     cursor: pointer;
 }
 
@@ -86,9 +103,10 @@ nav ul li a i{
     margin-top: 130px;
     margin-left: -70px;
     display: none;
-    border-radius: 0px 0px 10px 10px;
+    border-radius: 12px 0px 10px 10px;
     box-shadow: 2px 3px 30px #CCC;
     background-color: #FFF;
+        z-index: 9999;
 }
 .content-user ul{
     padding: 10px;
@@ -98,14 +116,13 @@ nav ul li a i{
     font-family: 'PT Sans', sans-serif;
     word-break: break-all;
     color: #5c5959;
-    background-color: #FFF;
 }
 #name h1{
     font-family: 'PT Sans', sans-serif;
-    font-size: 120%;
+    font-size: 180%;
     height: 30px;
     color: #FFF;
-    padding-top: 2%;
+    /* padding-top: 2%; */
     margin-right: 10px;
 }
 #logout{
@@ -125,7 +142,7 @@ nav ul li a i{
     transition: 0.7s;
 }
 #logout:hover{
-    color: #FFF;
+    color: #5c5c5c;
     transition: 0.7s;
 }
 @media only screen and (max-device-width: 600px){
