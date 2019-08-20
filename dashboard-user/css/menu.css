@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+.menu{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-content: center;
+    background-color: #393939;
+    z-index: 99999;
+}
+.pro{
+    width: 45%;
+    margin-left: 50px;
+    align-items: center;
+    display: flex;
+}
+#profissao{
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    color: #FFF;
+}
+h3{
+    position: absolute;
+    
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    align-items: center;
+    margin-top: -30px;
+}
+.logo img{
+    width: 100%;
+    margin-right: 5%;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+}
+.content-nav{
+    width: 45%;
+    display: flex;
+    align-items: center;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+}
+nav ul{
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+nav ul li{
+    list-style-type: none;    
+    padding-left: 30px;
+}
+nav ul li a{
+    font-family: 'PT Sans', sans-serif;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 140%;
+    font-weight: 550;
+    transition: all 0.7s;
+}
+nav ul li a:hover{
+/*    font-size: 130%;*/
+    transition: all 0.7s;
+    color: #d0cece;
+    border-top: solid 2px #d0cece;
+    border-bottom: solid 2px #d0cece;
+}
+nav ul li a i{
+    padding-right: 5px;    
+}
+.user{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99999;
+}
+.user img{
+    width: 30%;
+    height: auto;
+    cursor: pointer;
+}
+
+.content-user{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    margin-top: 130px;
+    margin-left: -70px;
+    display: none;
+    border-radius: 12px 0px 10px 10px;
+    box-shadow: 2px 3px 30px #CCC;
+    background-color: #FFF;
+        z-index: 9999;
+}
+.content-user ul{
+    padding: 10px;
+}
+.content-user ul li{
+    list-style: none;
+    font-family: 'PT Sans', sans-serif;
+    word-break: break-all;
+    color: #5c5959;
+}
+#name h1{
+    font-family: 'PT Sans', sans-serif;
+    font-size: 180%;
+    height: 30px;
+    color: #FFF;
+    /* padding-top: 2%; */
+    margin-right: 10px;
+}
+#logout{
+    width: 100%;
+    right: 0px;
+    padding-top: 5px;
+    padding-bottom: 5px;  
+    position: absolute;
+    bottom: 0px; 
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 120%;
+    background-color: #ccc;
+    text-align: center;
+    transition: 0.7s;
+}
+#logout:hover{
+    color: #5c5c5c;
+    transition: 0.7s;
+}
+@media only screen and (max-device-width: 600px){
+    .menu{
+        height: 110px;
+    }
+    .pro{
+        display: none;
+    }
+    .logo{
+        display: none;
+    }
+    nav{
+        font-size: 200%;
+    }
+    nav ul li{
+        padding-left: 80px;
+    }
+    .user img{
+        width: 80px;
+        height: 80px;
+    }
+    .content-user{
+        margin-top: 155px;
+    }
+    
+}
+

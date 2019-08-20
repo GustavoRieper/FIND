@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+body{
+    margin: 0px;
+}
+#image-logo{
+    width: 20%;
+    height: auto;
+/*    margin-left: 25%;*/
+    position: absolute;
+    margin-top: -200px;
+}
+#info{
+    position: absolute;
+    font-family: 'PT Sans', sans-serif;
+}
+.box-register{
+    width: 80%;
+    margin-left: 10%;
+    border: solid 2px #ccc;
+    border-radius: 10px;
+    margin-top: 10%;
+    min-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+input, #select{
+    padding: 5px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #cecece;
+    background-color: #fafafa;
+    font-size: 90%;
+    transition: all 0.5s;
+}
+.col1, .col2{
+    margin: 10px;
+    width: 40%;
+    min-height: 200px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.option{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#box-label{
+    width: 30%; 
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    width: 20%;
+    font-size: 90%;
+    padding: 5px;
+}
+.bottons{
+    position: relative;
+    margin-left: -130px;
+}
+#register{
+    margin: 10px;
+    width: 30%;
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: solid 1px #cecece;
+    background-color: #fafafa;
+    font-size: 90%;
+    transition: all 0.5s;
+    font-size: 90%;
+    cursor: pointer;
+    
+}
+#register:hover{
+    background-color: #e0e0e0;
+}
+#obg{
+    font-family: 'Raleway', sans-serif;
+    color: red;
+    font-weight: bold;
+}
+
+@media only screen and (max-device-width: 600px) {
+    .box-register{
+        width: 100%;
+        margin-top: 250px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    #image-logo{
+        width: 300px;
+        margin-top: -200px;
+    }
+    .col1, .col2{
+        width: 100%;
+        font-size: 200%;
+    }
+    input, #select{
+        width: 400px;
+    }
+    .option{
+        margin: 20px;
+    }
+    #register,a{
+        width: 40%;
+        height: 70px;
+    }
+    .bottons{
+        margin: 0px;
+        
+    }
+}
